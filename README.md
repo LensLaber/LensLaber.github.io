@@ -49,3 +49,11 @@ The goal is simple:
 ## Main Workspace
 
 ![Main Workflow](media/screenshots/workspace.png)
+
+The main workspace is designed to provide a fast and practical annotation experience with quick access to datasets, classes, tools and workflows.
+
+---
+
+## Large Dataset Workflow
+
+
