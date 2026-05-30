@@ -47,3 +47,5 @@ The goal is simple:
 ---
 
 ## Main Workspace
+
+![Main Workflow]media/screenshots/workspace.png)
