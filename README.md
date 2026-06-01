@@ -58,4 +58,19 @@ The main workspace is designed to provide a fast and practical annotation experi
 
 ![Main Workflow](media/videos/lv_0_20260601100724.mp4)
 
+LensLaber is designed to remain responsive when working with large image collections.
+
+Features include:
+
+- Thumbnail navigation
+- Multi-selection
+- Fast image switching
+- Dataset organization tools
+
+Tested with datasets containing more than 20,000 images.
+
+---
+
+## Fast Mode
+
 
