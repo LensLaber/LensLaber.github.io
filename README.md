@@ -75,6 +75,6 @@ Tested with datasets containing more than 20,000 images.
 
 ## Fast Mode
 
-![Large Dataset Workflow](media/screenshots/large_dataset_workflow.png)
-
-[▶ Watch Video](media/videos/large_dataset_workflow.mp4)
+<video controls width="100%">
+  <source src="media/videos/large_dataset_workflow.mp4" type="video/mp4">
+</video>
