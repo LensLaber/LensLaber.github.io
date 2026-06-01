@@ -56,9 +56,10 @@ The main workspace is designed to provide a fast and practical annotation experi
 
 ## Large Dataset Workflow
 
-<video controls width="100%">
-  <source src="https://lenslaber.github.io/media/videos/large_dataset_workflow.mp4" type="video/mp4">
-</video>
+![Large Dataset Workflow](media/screenshots/large_dataset_workflow.png)
+
+▶ Video:
+https://lenslaber.github.io/media/videos/large_dataset_workflow.mp4
 
 LensLaber is designed to remain responsive when working with large image collections.
 
@@ -75,6 +76,4 @@ Tested with datasets containing more than 20,000 images.
 
 ## Fast Mode
 
-<video controls width="100%">
-  <source src="media/videos/large_dataset_workflow.mp4" type="video/mp4">
-</video>
+
