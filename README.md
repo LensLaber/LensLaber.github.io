@@ -56,7 +56,9 @@ The main workspace is designed to provide a fast and practical annotation experi
 
 ## Large Dataset Workflow
 
-![Main Workflow](media/videos/lv_0_20260601100724.mp4)
+![Large Dataset Workflow](media/screenshots/large_dataset_workflow.png)
+
+[▶ Watch Video](media/videos/large_dataset_workflow.mp4)
 
 LensLaber is designed to remain responsive when working with large image collections.
 
