@@ -56,4 +56,6 @@ The main workspace is designed to provide a fast and practical annotation experi
 
 ## Large Dataset Workflow
 
+![Main Workflow](media/videos/lv_0_20260601100724.mp4)
+
 
