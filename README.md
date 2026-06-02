@@ -84,4 +84,10 @@ Fast Mode allows rapid class assignment during annotation, reducing repetitive U
 
 ## YOLO Integration
 
+![YOLO Detection](media/gifs/yolo_detection.gif)
+
+LensLaber supports user-provided YOLO ONNX models for automatic detection workflows.
+
+This allows users to accelerate annotation using their own trained models.
+
 
