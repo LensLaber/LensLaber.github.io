@@ -92,7 +92,7 @@ This allows users to accelerate annotation using their own trained models.
 
 ---
 
-## YOLO + SAM Integration
+## YOLO + SAM Workflow
 
 ![YOLO + SAM Workflow](media/screenshots/yolo_sam_workflow.png)
 
