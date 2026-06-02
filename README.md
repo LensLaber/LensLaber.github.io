@@ -48,7 +48,7 @@ The goal is simple:
 
 ## Main Workspace
 
-![Main Workflow](media/screenshots/workspace.png)
+![Main Workspace](media/screenshots/workspace.png)
 
 The main workspace is designed to provide a fast and practical annotation experience with quick access to datasets, classes, tools and workflows.
 
@@ -76,7 +76,7 @@ Tested with datasets containing more than 20,000 images.
 
 ## Fast Mode
 
-![Main Workflow](media/gifs/fast_mode.gif)
+![Fast Mode](media/gifs/fast_mode.gif)
 
 Fast Mode allows rapid class assignment during annotation, reducing repetitive UI interactions and speeding up dataset creation.
 
@@ -84,7 +84,7 @@ Fast Mode allows rapid class assignment during annotation, reducing repetitive U
 
 ## YOLO Integration
 
-![YOLO Detection](media/gifs/yolo_detection.gif)
+![YOLO Integration](media/gifs/yolo_detection.gif)
 
 LensLaber supports user-provided YOLO ONNX models for automatic detection workflows.
 
@@ -108,6 +108,50 @@ Typical benefits include:
 ---
 
 ## False Negative Review
+
+![False Negative Workflow](media/gifs/false_negative_review.gif)
+
+After automatic detection, LensLaber can optionally highlight low-confidence predictions for manual review.
+
+The confidence threshold is configurable by the user.
+
+Enabling this feature increases processing time.
+
+---
+
+## SAM Mobile Integration
+
+![SAM Mobil Integration](media/gifs/sam_mobile_workflow.gif)
+
+LensLaber currently includes SAM Mobile integration optimized for CPU-based workflows and modest hardware.
+
+Future versions are planned to support larger SAM models through GPU/CUDA acceleration.
+
+---
+
+## Filtering System
+
+![Filtering System](media/screenshots/filtering_system.png)
+
+Filters can be combined to quickly locate images, annotations or review targets inside large datasets.
+
+---
+
+## Dataset Statistics
+
+![Dataset Statistics](media/gifs/statistics.gif)
+
+Built-in statistics provide useful information about dataset composition and annotation progress.
+
+---
+
+## Image Quality Control
+
+
+
+
+
+
 
 
 
