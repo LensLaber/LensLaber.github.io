@@ -131,7 +131,7 @@ Future versions are planned to support larger SAM models through GPU/CUDA accele
 
 ## Filtering System
 
-![Filtering System](media/screenshots/filtering_system.png)
+![Filtering System](media/gifs/filtering_system.gif)
 
 Filters can be combined to quickly locate images, annotations or review targets inside large datasets.
 
