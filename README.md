@@ -90,4 +90,25 @@ LensLaber supports user-provided YOLO ONNX models for automatic detection workfl
 
 This allows users to accelerate annotation using their own trained models.
 
+---
+
+## YOLO + SAM Integration
+
+![YOLO + SAM Workflow](media/screenshots/yolo_sam_workflow.png)
+
+▶ Video:
+[Watch YOLO + SAM workflow](media/videos/yolo_sam_workflow.mp4)
+
+This workflow combines YOLO-based detection with SAM-assisted refinement to speed up annotation while keeping manual control.
+
+Typical benefits include:
+
+- Faster object initialization
+- Reduced manual polygon adjustment
+- Better efficiency on repetitive datasets
+- Practical semi-automatic annotation workflow
+
+---
+
+
 
