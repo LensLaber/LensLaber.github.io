@@ -121,7 +121,7 @@ Enabling this feature increases processing time.
 
 ## SAM Mobile Integration
 
-![SAM Mobil Integration](media/gifs/sam_mobile_workflow.gif)
+![SAM Mobile Integration](media/gifs/sam_mobile_workflow.gif)
 
 LensLaber currently includes SAM Mobile integration optimized for CPU-based workflows and modest hardware.
 
