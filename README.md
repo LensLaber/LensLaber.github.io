@@ -94,7 +94,7 @@ This allows users to accelerate annotation using their own trained models.
 
 ## YOLO + SAM Workflow
 
-![YOLO + SAM Workflow](media/screenshots/yolo_sam_workflow.gif)
+![YOLO + SAM Workflow](media/gifs/yolo_sam_workflow.gif)
 
 This workflow combines YOLO-based detection with SAM-assisted refinement to speed up annotation while keeping manual control.
 
