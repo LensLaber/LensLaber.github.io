@@ -76,4 +76,12 @@ Tested with datasets containing more than 20,000 images.
 
 ## Fast Mode
 
+![Main Workflow](media/gifs/fast_mode.gif)
+
+Fast Mode allows rapid class assignment during annotation, reducing repetitive UI interactions and speeding up dataset creation.
+
+---
+
+## YOLO Integration
+
 
