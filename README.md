@@ -147,6 +147,113 @@ Built-in statistics provide useful information about dataset composition and ann
 
 ## Image Quality Control
 
+![Image Quality Control](media/screenshots/image_quality_control.png)
+
+Image quality tools help identify potential issues before dataset export or model training.
+
+---
+
+## Project System
+
+![Project System](media/screenshots/project_system.png)
+
+Projects can be saved and loaded using the `.lens` project format.
+
+This preserves:
+
+- Annotations
+- Review state
+- Filters
+- Workflow progress
+
+---
+
+## Dataset Export
+
+![Dataset Export](media/screenshots/export.png)
+
+LensLaber supports dataset export workflows including:
+
+- Train / Validation / Test split
+- Optional image inclusion
+- ZIP packaging
+
+Built-in augmentations can also be used to prepare training datasets.
+
+---
+
+## Performance Philosophy
+
+LensLaber is designed around practical workflows rather than hardware requirements.
+
+Current versions focus on:
+
+- CPU-friendly operation
+- Lightweight AI workflows
+- Offline usability
+
+Future versions will introduce optional GPU/CUDA acceleration for users with compatible hardware.
+
+---
+
+## Tested Environment
+
+Current testing includes:
+
+- Windows 10
+- Intel i5-class CPU
+- 8 GB RAM
+
+Compatibility with additional systems will continue to improve over time.
+
+---
+
+## Beta Status
+
+LensLaber is currently in beta.
+
+The beta version is functional but intentionally limited compared to future releases.
+
+Some features may be restricted, disabled or still under development.
+
+---
+
+## Roadmap
+
+Planned improvements include:
+
+- GPU/CUDA acceleration
+- Support for larger SAM models
+- Additional export options
+- Performance improvements
+- Workflow enhancements
+
+---
+
+## Feedback
+
+Feedback, bug reports and feature suggestions are welcome.
+
+---
+
+## Download
+
+Download links will be available here.
+
+---
+
+## License
+
+LensLaber is proprietary software.
+
+This repository is intended for documentation, beta distribution and project updates.
+
+© 2026 LensLaber. All rights reserved.
+
+
+
+
+
 
 
 
