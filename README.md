@@ -242,7 +242,7 @@ Download links will be available here.
 
 ---
 
-### 🔒 Integrity Verification (SHA-256)
+## 🔒 Integrity Verification (SHA-256)
 
 If you want to verify that the downloaded file is identical to the originally compiled version and has not been altered or corrupted, you can check its SHA-256 hash.
 
