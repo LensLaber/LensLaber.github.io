@@ -238,7 +238,9 @@ Feedback, bug reports and feature suggestions are welcome.
 
 ## Download
 
-📄 **[Download SHA-256 Checksum](https://lenslaber.github.io/downloads/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
+👉 [Download latest installer](https://github.com/LensLaber/LensLaber.github.io/releases/latest)
+
+📄 [Download SHA-256 checksum](https://github.com/LensLaber/LensLaber.github.io/releases/latest/download/LensLaber_Beta_Setup_v1.0.0.exe.sha256)
 
 ---
 
