@@ -238,7 +238,7 @@ Feedback, bug reports and feature suggestions are welcome.
 
 ## Download
 
-Download links will be available here.
+* 📄 **[Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber/raw/main/download/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
 
 ---
 
@@ -254,6 +254,7 @@ If you want to verify that the downloaded file is identical to the originally co
 2. Run the following command:
    ```powershell
    Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
+   ```
 
 ---
 
