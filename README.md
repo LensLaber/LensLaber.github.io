@@ -242,6 +242,21 @@ Download links will be available here.
 
 ---
 
+### 🔒 Integrity Verification (SHA-256)
+
+If you want to verify that the downloaded file is identical to the originally compiled version and has not been altered or corrupted, you can check its SHA-256 hash.
+
+**Official Hash:**
+`3a2e683374044c1f21067434e23481d30bf7ef6dfcbb938f734a49adc48ae157`
+
+#### How to verify it on Windows:
+1. Open **PowerShell** in the folder where you downloaded the installer.
+2. Run the following command:
+   ```powershell
+   Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
+
+---
+
 ## License
 
 LensLaber is proprietary software.
