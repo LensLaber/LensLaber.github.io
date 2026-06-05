@@ -238,7 +238,7 @@ Feedback, bug reports and feature suggestions are welcome.
 
 ## Download
 
-👉 [Download latest installer](https://github.com/LensLaber/LensLaber.github.io/releases/latest/download/LensLaber_Beta_Setup_v1.0.0.exe)
+👉 [Download LensLaber Beta (Windows)](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)
 
 📄 [Download SHA-256 checksum](https://github.com/LensLaber/LensLaber.github.io/releases/latest/download/LensLaber_Beta_Setup_v1.0.0.exe.sha256)
 
