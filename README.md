@@ -240,10 +240,29 @@ Flexible export workflows support multiple dataset preparation strategies.
 - **ZIP Packaging** – Single-file distribution format
 - **Format Support** – Multiple annotation format options (YOLO, COCO, etc.)
 
-**Built-in Augmentations:**
-- On-the-fly image transformations during export
-- Rotation, flip, brightness, and contrast adjustments
-- Seamless integration with training pipelines
+---
+
+## 🎨 Built-in Augmentations
+
+![Built-in Augmentations](media/gifs/augmentations_workflow.gif)
+
+LensLaber includes powerful on-the-fly dataset transformation capabilities for preparing training-ready datasets without external tools.
+
+**Augmentation features:**
+
+- **Geometric Transformations** – Rotation, flipping, perspective shifts
+- **Color & Brightness** – Contrast adjustment, brightness variations, color jittering
+- **Noise & Distortion** – Gaussian noise, blur, compression artifacts
+- **Annotation-Aware** – All transformations preserve and adapt annotations accordingly
+- **Batch Processing** – Apply augmentations to entire datasets during export
+- **Seamless Integration** – Works directly within the export pipeline
+- **Configurable Parameters** – Fine-tune transformation intensity and probability
+
+**Use cases:**
+- Generate diverse training datasets from limited source images
+- Address class imbalance with synthetic variations
+- Improve model robustness through data augmentation
+- Eliminate dependency on external preprocessing tools
 
 ---
 
