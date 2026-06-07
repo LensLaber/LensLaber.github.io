@@ -289,7 +289,7 @@ LensLaber is architected around practical workflows rather than hardware require
 
 Current testing validation includes:
 
-- **Operating System:** Windows 10 / Windows 11
+- **Operating System:** Windows 10 
 - **Processor:** Intel i5-class (tested extensively on i5-4200U and i3 @ 4GB RAM)
 - **Memory:** 8 GB RAM (functional at 4 GB with modest dataset sizes)
 - **Graphics:** Integrated Intel UHD / NVIDIA 820M (CPU-primary workflow)
@@ -377,7 +377,7 @@ To verify that your downloaded installer is authentic and has not been altered o
 ### VirusTotal Verification:
 
 View the complete, untampered antivirus analysis on VirusTotal's official servers:
-[VirusTotal Report (0/64 Clean)](https://www.virustotal.com/gui/file/82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d/detection)
+[VirusTotal Report (0/54 Clean)](https://www.virustotal.com/gui/file/82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d/detection)
 
 ---
 
