@@ -41,14 +41,14 @@ As an independent beta release, this installer does not yet carry a costly comme
 * **Developer Identity:** Fully transparent. Connect with the creator directly:
   - [LinkedIn Profile – Clemente O.](https://www.linkedin.com/in/clemente-o-97b78a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android)
   - [GitHub Profile – LensLaber](https://github.com/LensLaber)
-* **VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Live Link (0/64 Clean)](https://www.virustotal.com/gui/file/82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d/detection).
-* **Official SHA-256 Checksum:** `82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d`
+* **VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Live Link (0/64 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection).
+* **Official SHA-256 Checksum:** `348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59`
 
 #### How to verify file integrity on Windows:
 1. Open **PowerShell** in the directory where the installer was downloaded.
 2. Run the following command:
    ```powershell
-   Get-FileHash .\LensLaber_Beta_Setup_v0.9.0.exe -Algorithm SHA256
+   Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
    ```
 
 ---
@@ -96,7 +96,7 @@ Key capabilities include:
 
 - **Thumbnail Navigation** – Visual browsing of thousands of images
 - **Multi-selection** – Batch operations on multiple images
-- **Fast Image Switching** �� Instant navigation between frames
+- **Fast Image Switching** – Instant navigation between frames
 - **Dataset Organization Tools** – Hierarchical folder management and filtering
 
 **Tested successfully with datasets containing 20,000+ images.**
@@ -289,7 +289,7 @@ LensLaber is architected around practical workflows rather than hardware require
 
 Current testing validation includes:
 
-- **Operating System:** Windows 10 
+- **Operating System:** Windows 10 / Windows 11
 - **Processor:** Intel i5-class (tested extensively on i5-4200U and i3 @ 4GB RAM)
 - **Memory:** 8 GB RAM (functional at 4 GB with modest dataset sizes)
 - **Graphics:** Integrated Intel UHD / NVIDIA 820M (CPU-primary workflow)
@@ -350,9 +350,9 @@ Please reach out through [GitHub Issues](https://github.com/LensLaber/LensLaber.
 
 ## 📥 Download
 
-**👉 [Download LensLaber Beta for Windows](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v0.9.0.exe)**
+**👉 [Download LensLaber Beta for Windows](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)**
 
-**📄 [Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v0.9.0.exe.sha256)**
+**📄 [Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
 
 ---
 
@@ -362,7 +362,7 @@ To verify that your downloaded installer is authentic and has not been altered o
 
 **Official SHA-256 Hash:**
 ```
-82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d
+348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59
 ```
 
 ### Verify on Windows:
@@ -370,14 +370,14 @@ To verify that your downloaded installer is authentic and has not been altered o
 1. Open **PowerShell** in the directory containing the downloaded installer.
 2. Execute the following command:
    ```powershell
-   Get-FileHash .\LensLaber_Beta_Setup_v0.9.0.exe -Algorithm SHA256
+   Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
    ```
 3. Compare the output hash with the official hash above. They must match exactly.
 
 ### VirusTotal Verification:
 
 View the complete, untampered antivirus analysis on VirusTotal's official servers:
-[VirusTotal Report (0/54 Clean)](https://www.virustotal.com/gui/file/82293fe17d8d32c9c882b2ab742926d4b1967274a929c5f38df449f543e6155d/detection)
+[VirusTotal Report (0/64 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection)
 
 ---
 
