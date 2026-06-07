@@ -350,9 +350,9 @@ Please reach out through [GitHub Issues](https://github.com/LensLaber/LensLaber.
 
 ## 📥 Download
 
-**👉 [Download LensLaber Beta for Windows](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)**
+**👉 [Download LensLaber Beta for Windows](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)**
 
-**📄 [Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber.github.io/releases/download/v0.9.0-beta/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
+**📄 [Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
 
 ---
 
