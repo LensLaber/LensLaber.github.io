@@ -53,8 +53,8 @@ As an independent beta release, the Windows installer does not yet carry a costl
 * **Developer Identity:** Fully transparent. Connect with the creator directly:
   - [LinkedIn Profile – Clemente O.](https://www.linkedin.com/in/clemente-o-97b78a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android)
   - [GitHub Profile – LensLaber](https://github.com/LensLaber)
-* **Windows VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Windows Report (0/64 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection).
-* **Linux VirusTotal Live Analysis:** View the clean report for the AppImage binary via this [VirusTotal Linux Report (0/64 Clean)](https://www.virustotal.com/gui/file/13bd97751a93d8bb9157d595dca2b18b7ff6f061296249780e4db88dc88a21d6/detection).
+* **Windows VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Windows Report (0/56 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection).
+* **Linux VirusTotal Live Analysis:** View the clean report for the AppImage binary via this [VirusTotal Linux Report (0/62 Clean)](https://www.virustotal.com/gui/file/13bd97751a93d8bb9157d595dca2b18b7ff6f061296249780e4db88dc88a21d6/detection).
 
 ---
 
