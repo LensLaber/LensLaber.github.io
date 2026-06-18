@@ -8,6 +8,18 @@ Fast, lightweight, and practical annotation workflows for large computer vision 
 
 ---
 
+## 📥 Download Latest Beta
+
+🪟 **Windows Setup:**
+* **[Download LensLaber Beta for Windows (.exe)](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)**
+* [Download SHA-256 Checksum (.sha256)](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe.sha256)
+
+🐧 **Linux Standalone AppImage:**
+* **[Download LensLaber Beta for Linux (.AppImage)](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber-Beta_v1.0.0-x86_64.AppImage)**
+* [Download SHA-256 Checksum (.sha256)](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber-Beta_v1.0.0-x86_64.AppImage.sha256)
+
+---
+
 ## 🛠️ The Philosophy: Built for Limited Hardware
 
 Many modern annotation tools assume you have infinite RAM, a high-end dedicated GPU, or a constant high-speed internet connection. LensLaber was built on the exact opposite principle. 
@@ -31,25 +43,44 @@ The goal is simple:
 
 ## 🛡️ Security, Transparency & Installation
 
-LensLaber is proprietary software distributed as a standalone Windows executable (`.exe`). Because your data security and peace of mind are paramount, we provide total transparency:
+LensLaber is proprietary software distributed as standalone packages. Because your data security and peace of mind are paramount, we provide total transparency:
 
 ### ⚠️ Windows SmartScreen Notice
-As an independent beta release, this installer does not yet carry a costly commercial EV Code Signing Certificate. Therefore, Windows SmartScreen will likely display a blue warning screen (*"Windows protected your PC / Unknown Publisher"*) when you run the installer.
+As an independent beta release, the Windows installer does not yet carry a costly commercial EV Code Signing Certificate. Therefore, Windows SmartScreen will likely display a blue warning screen (*"Windows protected your PC / Unknown Publisher"*) when you run the installer.
 * **To proceed:** Click on **"More info"** and then select **"Run anyway"**.
 
 ### Audit the Security Yourself:
 * **Developer Identity:** Fully transparent. Connect with the creator directly:
   - [LinkedIn Profile – Clemente O.](https://www.linkedin.com/in/clemente-o-97b78a32a?utm_source=share_via&utm_content=profile&utm_medium=member_android)
   - [GitHub Profile – LensLaber](https://github.com/LensLaber)
-* **VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Live Link (0/64 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection).
-* **Official SHA-256 Checksum:** `348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59`
+* **Windows VirusTotal Live Analysis:** View the completely clean, untampered report directly on the official servers via this [VirusTotal Windows Report (0/64 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection).
+* **Linux VirusTotal Live Analysis:** View the clean report for the AppImage binary via this [VirusTotal Linux Report (0/64 Clean)](https://www.virustotal.com/gui/file/13bd97751a93d8bb9157d595dca2b18b7ff6f061296249780e4db88dc88a21d6/detection).
 
-#### How to verify file integrity on Windows:
-1. Open **PowerShell** in the directory where the installer was downloaded.
-2. Run the following command:
-   ```powershell
-   Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
-   ```
+---
+
+## 🔒 Integrity Verification (SHA-256)
+
+To verify that your downloaded installer is authentic and has not been altered or corrupted, validate the SHA-256 cryptographic hash.
+
+### Verify on Windows:
+* **Official Windows SHA-256 Hash:** `348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59`
+
+1. Open **PowerShell** in the directory containing the downloaded installer.
+2. Execute the following command:
+
+       Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
+
+3. Compare the output hash with the official hash above. They must match exactly.
+
+### Verify on Linux:
+* **Official Linux SHA-256 Hash:** `13bd97751a93d8bb9157d595dca2b18b7ff6f061296249780e4db88dc88a21d6`
+
+1. Open your **Terminal** in the directory containing the downloaded AppImage.
+2. Execute the following commands to check integrity and run the software:
+
+       sha256sum LensLaber-Beta_v1.0.0-x86_64.AppImage
+       chmod +x LensLaber-Beta_v1.0.0-x86_64.AppImage
+       ./LensLaber-Beta_v1.0.0-x86_64.AppImage
 
 ---
 
@@ -289,7 +320,7 @@ LensLaber is architected around practical workflows rather than hardware require
 
 Current testing validation includes:
 
-- **Operating System:** Windows 10 
+- **Operating System:** Windows 10 | Ubuntu 22.04 / 24.04 LTS (Tested via Live USB)
 - **Processor:** Intel i5-class (tested extensively on i5-4200U and i3 @ 4GB RAM)
 - **Memory:** 8 GB RAM (functional at 4 GB with modest dataset sizes)
 - **Graphics:** Integrated Intel UHD / NVIDIA 820M (CPU-primary workflow)
@@ -345,39 +376,6 @@ We actively welcome:
 - **Performance insights** – Document your hardware and usage patterns
 
 Please reach out through [GitHub Issues](https://github.com/LensLaber/LensLaber.github.io/issues) or connect directly with the creator.
-
----
-
-## 📥 Download
-
-**👉 [Download LensLaber Beta for Windows](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe)**
-
-**📄 [Download SHA-256 Checksum](https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe.sha256)**
-
----
-
-## 🔒 Integrity Verification (SHA-256)
-
-To verify that your downloaded installer is authentic and has not been altered or corrupted, validate the SHA-256 cryptographic hash.
-
-**Official SHA-256 Hash:**
-```
-348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59
-```
-
-### Verify on Windows:
-
-1. Open **PowerShell** in the directory containing the downloaded installer.
-2. Execute the following command:
-   ```powershell
-   Get-FileHash .\LensLaber_Beta_Setup_v1.0.0.exe -Algorithm SHA256
-   ```
-3. Compare the output hash with the official hash above. They must match exactly.
-
-### VirusTotal Verification:
-
-View the complete, untampered antivirus analysis on VirusTotal's official servers:
-[VirusTotal Report (0/56 Clean)](https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection)
 
 ---
 
