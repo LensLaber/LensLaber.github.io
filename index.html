@@ -13,11 +13,12 @@
 </head>
 <body class="bg-slate-950 text-slate-200 font-sans leading-relaxed selection:bg-blue-500/30">
 
+    <!-- Navbar -->
     <nav class="glass sticky top-0 z-50 border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="media/screenshots/logoLL.png" alt="Logo" class="w-8 h-8 rounded-lg">
-                <span class="font-bold text-xl text-white">LensLaber</span>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="media/screenshots/logoLL.png" alt="Logo" class="w-10 h-10 object-contain">
+                <span class="font-bold text-2xl text-white tracking-tight">LensLaber</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="features.html" class="hover:text-blue-400 transition">Features</a>
@@ -36,23 +37,24 @@
         </div>
     </nav>
 
+    <!-- Header / Hero -->
     <header class="py-24 px-6 text-center">
-        <div class="inline-block mb-6">
-            <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="w-24 h-24 object-contain shadow-2xl rounded-2xl">
-        </div>
-        <h1 class="text-5xl font-extrabold text-white mb-4">LensLaber</h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">Professional computer vision annotation. 100% Offline. Optimized for low-end hardware.</p>
+        <h1 class="text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 tracking-tight mb-6">LensLaber</h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">Professional computer vision annotation. 100% Offline. Optimized for low-end hardware.</p>
     </header>
 
+    <!-- Workspace -->
     <section class="max-w-5xl mx-auto px-6 mb-24">
         <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl shadow-black">
             <img src="media/screenshots/workspace.png" alt="LensLaber Workspace" class="w-full">
         </div>
     </section>
 
+    <!-- Download Section -->
     <section id="download" class="max-w-4xl mx-auto px-6 mb-24">
         <h2 class="text-3xl font-bold text-white mb-10 text-center">Download LensLaber Beta</h2>
         <div class="grid md:grid-cols-2 gap-8">
+            <!-- Windows -->
             <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 class="text-xl font-bold mb-4">Windows</h3>
                 <a href="https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber_Beta_Setup_v1.0.0.exe" class="block bg-blue-600 text-center py-2 rounded mb-4 hover:bg-blue-700 font-bold text-white transition">Download .exe</a>
@@ -62,6 +64,7 @@
                 </div>
                 <a href="https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection" target="_blank" class="text-xs text-slate-400 hover:text-blue-400 underline block text-center">Security Report (0/56)</a>
             </div>
+            <!-- Linux -->
             <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 class="text-xl font-bold mb-4">Linux</h3>
                 <a href="https://github.com/LensLaber/LensLaber.github.io/releases/download/v1.0.0-beta/LensLaber-Beta_v1.0.0-x86_64.AppImage" class="block bg-blue-600 text-center py-2 rounded mb-4 hover:bg-blue-700 font-bold text-white transition">Download .AppImage</a>
@@ -74,9 +77,39 @@
         </div>
     </section>
 
-    <footer class="text-center py-12 border-t border-slate-800">
+    <!-- Roadmap -->
+    <section class="max-w-4xl mx-auto px-6 mb-24">
+        <h2 class="text-2xl font-bold text-white mb-6 text-center">Future Integration Path</h2>
+        <p class="text-center text-slate-400 mb-10 max-w-2xl mx-auto">Modular features for power users, designed to run gracefully on legacy hardware.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900 p-6 rounded-lg border border-slate-800">
+                <h4 class="font-bold text-blue-400 mb-2">Hardware Acceleration</h4>
+                <p class="text-sm text-slate-400">Optional CUDA/GPU support modules.</p>
+            </div>
+            <div class="bg-slate-900 p-6 rounded-lg border border-slate-800">
+                <h4 class="font-bold text-blue-400 mb-2">Expanded Exports</h4>
+                <p class="text-sm text-slate-400">Native COCO and Detectron2 pipelines.</p>
+            </div>
+            <div class="bg-slate-900 p-6 rounded-lg border border-slate-800">
+                <h4 class="font-bold text-blue-400 mb-2">Advanced SAM-2</h4>
+                <p class="text-sm text-slate-400">Performance packs for next-gen models.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center">
         <div class="text-slate-500 text-sm">
             <p>&copy; 2026 LensLaber. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="mailto:LensLaber@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+                <span>|</span>
+                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <span>|</span>
+                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <span>|</span>
+                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
+            </div>
         </div>
     </footer>
 
