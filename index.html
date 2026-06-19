@@ -13,7 +13,6 @@
 </head>
 <body class="bg-slate-950 text-slate-200 font-sans leading-relaxed selection:bg-blue-500/30">
 
-    <!-- Navbar -->
     <nav class="glass sticky top-0 z-50 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
@@ -37,7 +36,6 @@
         </div>
     </nav>
 
-    <!-- Enterprise Hero Section -->
     <header class="py-28 px-6 text-center max-w-5xl mx-auto">
         <div class="inline-block border border-slate-700 bg-slate-900/50 text-slate-300 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-8 shadow-sm">
             <span class="text-blue-500 mr-2">●</span> Optimized for Legacy Hardware
@@ -50,23 +48,19 @@
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-lg transition shadow-lg shadow-blue-600/20 w-full sm:w-auto">Download Beta</a>
-            <!-- Updated link to features.html and arrow icon -->
             <a href="features.html" class="bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 hover:border-slate-500 px-8 py-3 rounded-lg font-bold text-lg transition w-full sm:w-auto">Explore Features →</a>
         </div>
     </header>
 
-    <!-- Workspace Preview -->
     <section class="max-w-6xl mx-auto px-6 mb-32">
         <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl shadow-black/50 bg-slate-900">
             <img src="media/screenshots/workspace.png" alt="LensLaber Workspace Dashboard" class="w-full opacity-90 hover:opacity-100 transition-opacity duration-500">
         </div>
     </section>
 
-    <!-- Download Section -->
     <section id="download" class="max-w-4xl mx-auto px-6 mb-24">
         <h2 class="text-3xl font-bold text-white mb-10 text-center">Deploy LensLaber Beta</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Windows -->
             <div class="bg-slate-900/50 p-8 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-colors">
                 <div class="flex items-center gap-3 mb-6">
                     <h3 class="text-2xl font-bold text-white">Windows</h3>
@@ -78,7 +72,6 @@
                 </div>
                 <a href="https://www.virustotal.com/gui/file/348c7770e69bc0c4ee132a322c588f917bf8f59f699f8c711e14c8a90a701b59/detection" target="_blank" class="text-xs text-slate-500 hover:text-blue-400 underline block text-center transition">Security Report (0/56)</a>
             </div>
-            <!-- Linux -->
             <div class="bg-slate-900/50 p-8 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-colors">
                 <div class="flex items-center gap-3 mb-6">
                     <h3 class="text-2xl font-bold text-white">Linux</h3>
@@ -93,7 +86,33 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="roadmap" class="max-w-5xl mx-auto px-6 mb-24">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Performance & Roadmap</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                LensLaber is built on a CPU-first architecture. 
+                <span class="text-blue-400 font-semibold">Even with advanced model support, our engine maintains native compatibility with low-end and legacy hardware.</span>
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900/30 p-6 rounded-xl border border-slate-800/50">
+                <div class="w-10 h-10 rounded-lg bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mb-4 text-blue-400">⚡</div>
+                <h4 class="font-bold text-white mb-2">Hardware Acceleration</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Optional CUDA/GPU modules for power users. CPU-only inference remains the default for legacy systems.</p>
+            </div>
+            <div class="bg-slate-900/30 p-6 rounded-xl border border-slate-800/50">
+                <div class="w-10 h-10 rounded-lg bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mb-4 text-blue-400">📦</div>
+                <h4 class="font-bold text-white mb-2">Expanded Exports</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Native COCO, Pascal VOC, and Detectron2 pipeline compatibility coming in the next build.</p>
+            </div>
+            <div class="bg-slate-900/30 p-6 rounded-xl border border-slate-800/50">
+                <div class="w-10 h-10 rounded-lg bg-blue-900/30 border border-blue-800/50 flex items-center justify-center mb-4 text-blue-400">🧠</div>
+                <h4 class="font-bold text-white mb-2">Advanced SAM-2</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">High-accuracy performance packs. Optimized for CPU inference, ensuring zero lag on older machines.</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
         <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
             <p>&copy; 2026 LensLaber. All rights reserved.</p>
