@@ -2,6 +2,10 @@
 
 Offline-first annotation tool for computer vision datasets.
 
+Markdown >Proprietary Software
+
+LensLaber is a closed-source. This repository serves as a distribution and documentation hub for beta releases, technical requirements, and release notes. The source code is not public 
+
 ![Main Workflow](media/gifs/gif_lens.gif)
 
 Fast, lightweight, and practical annotation workflows for large computer vision datasets—built to deliver high performance without relying on cloud services or high-end hardware.
