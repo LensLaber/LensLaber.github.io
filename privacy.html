@@ -1,40 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LensLaber Privacy Policy — how we handle your data, your rights under GDPR, and our use of third-party services.">
     <title>Privacy Policy | LensLaber</title>
+    <link rel="icon" type="image/png" href="media/screenshots/logoLL.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Sora', sans-serif; }
+        .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+
+        .policy-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .policy-section p { color: #94a3b8; margin-bottom: 0.85rem; font-size: 0.9rem; line-height: 1.75; }
+        .policy-section ul { color: #94a3b8; font-size: 0.9rem; line-height: 1.75; margin-bottom: 0.85rem; padding-left: 1.25rem; }
+        .policy-section ul li { margin-bottom: 0.35rem; }
+        .policy-section a { color: #60a5fa; text-decoration: underline; }
+        .policy-section a:hover { color: #93c5fd; }
+        .policy-section strong { color: #cbd5e1; }
+
+        .tag-pill {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+        }
+        .tag-gdpr { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+        .tag-spain { background: rgba(234,179,8,0.1); color: #fbbf24; border: 1px solid rgba(234,179,8,0.2); }
+
+        .toc-link { color: #60a5fa; font-size: 0.85rem; text-decoration: none; }
+        .toc-link:hover { text-decoration: underline; color: #93c5fd; }
+
+        .info-box {
+            background: rgba(59,130,246,0.07);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .warn-box {
+            background: rgba(234,179,8,0.07);
+            border: 1px solid rgba(234,179,8,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-300 p-8 md:p-16 max-w-4xl mx-auto leading-relaxed">
-    <h1 class="text-3xl font-bold text-white mb-8">Privacy Policy</h1>
-    
-    <p class="mb-6">Last updated: June 19, 2026</p>
+<body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
 
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">1. Data Controller</h2>
-    <p class="mb-4">The controller of the data collected through this website is the developer of LensLaber. You can contact us regarding any privacy-related matters at: <a href="mailto:LensLaber@gmail.com" class="text-blue-400 underline">LensLaber@gmail.com</a>.</p>
+    <!-- NAV -->
+    <nav class="glass sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
+                <span class="font-display font-bold text-xl text-white tracking-wide">LensLaber</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="features.html" class="hover:text-blue-400 transition">Features</a>
+                <a href="philosophy.html" class="hover:text-blue-400 transition">Philosophy</a>
+                <a href="index.html#download" class="hover:text-white transition">Download</a>
+                <div class="relative group">
+                    <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
+                    <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                        <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+        </div>
+    </nav>
 
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">2. Collected Data and Purpose</h2>
-    <p class="mb-4">LensLaber is an offline-first software. <strong>We do not track your activity, monitor your local files, or store user data in the cloud.</strong></p>
-    <p class="mb-4">The only personal information we collect is your <strong>email address</strong>, provided voluntarily through our subscription form to receive:</p>
-    <ul class="list-disc ml-6 mb-4 space-y-2">
-        <li>Notifications regarding critical software updates.</li>
-        <li>Alerts about new beta versions and major feature announcements.</li>
-    </ul>
+    <!-- HEADER -->
+    <header class="py-14 px-6 text-center border-b border-slate-800/50">
+        <div class="max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 border border-slate-700 bg-slate-900/50 text-slate-400 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6">
+                <i class="fas fa-shield-halved text-blue-500"></i> Privacy & Data Protection
+            </div>
+            <h1 class="font-display text-4xl font-bold text-white mb-4">Privacy Policy</h1>
+            <p class="text-slate-400 text-sm mb-4">
+                Last updated: <strong class="text-slate-300">June 19, 2026</strong>
+            </p>
+            <div class="flex items-center justify-center gap-2 flex-wrap">
+                <span class="tag-pill tag-gdpr"><i class="fas fa-euro-sign"></i> GDPR Compliant</span>
+                <span class="tag-pill tag-spain"><i class="fas fa-gavel"></i> LOPDGDD (Spain)</span>
+            </div>
+        </div>
+    </header>
 
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">3. Legal Basis and Retention</h2>
-    <p class="mb-4">The legal basis for processing your email address is your explicit consent upon subscribing. We will retain your email address only for as long as you wish to continue receiving updates. You may revoke this consent at any time.</p>
+    <main class="max-w-3xl mx-auto px-6 py-12">
 
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">4. User Rights</h2>
-    <p class="mb-4">Under applicable data protection laws (such as the GDPR), you have the right to:</p>
-    <ul class="list-disc ml-6 mb-4 space-y-2">
-        <li>Access, rectify, or request the deletion of your data.</li>
-        <li>Withdraw your consent at any time.</li>
-        <li>Lodge a complaint with a data protection supervisory authority.</li>
-    </ul>
-    <p class="mb-4">To exercise these rights, simply send an email to <a href="mailto:LensLaber@gmail.com" class="text-blue-400 underline">LensLaber@gmail.com</a>.</p>
+        <!-- TABLE OF CONTENTS -->
+        <div class="bg-slate-900/40 border border-slate-800/60 rounded-xl p-6 mb-10">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Contents</p>
+            <ol class="space-y-2">
+                <li><a href="#section-1" class="toc-link">1. Data Controller</a></li>
+                <li><a href="#section-2" class="toc-link">2. What Data We Collect and Why</a></li>
+                <li><a href="#section-3" class="toc-link">3. Legal Basis for Processing</a></li>
+                <li><a href="#section-4" class="toc-link">4. Data Retention</a></li>
+                <li><a href="#section-5" class="toc-link">5. Third-Party Sub-Processors</a></li>
+                <li><a href="#section-6" class="toc-link">6. International Data Transfers</a></li>
+                <li><a href="#section-7" class="toc-link">7. Your Rights</a></li>
+                <li><a href="#section-8" class="toc-link">8. Cookies and Tracking Technologies</a></li>
+                <li><a href="#section-9" class="toc-link">9. Children's Privacy</a></li>
+                <li><a href="#section-10" class="toc-link">10. Security Measures</a></li>
+                <li><a href="#section-11" class="toc-link">11. Changes to This Policy</a></li>
+                <li><a href="#section-12" class="toc-link">12. Supervisory Authority</a></li>
+            </ol>
+        </div>
 
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">5. Security and Third Parties</h2>
-    <p class="mb-4">We do not sell, rent, or share your data with third parties. Subscription data is managed through Google Forms; therefore, we recommend that you also review the <a href="https://policies.google.com/privacy" class="text-blue-400 underline" target="_blank">Google Privacy Policy</a>.</p>
+        <div class="policy-section">
+
+            <!-- 1. DATA CONTROLLER -->
+            <h2 id="section-1">
+                <i class="fas fa-user-shield text-blue-400 text-base"></i> 1. Data Controller
+            </h2>
+            <p>
+                The data controller responsible for the personal data processed through this website and the LensLaber software is:
+            </p>
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 mb-4 text-sm text-slate-300 space-y-1">
+                <p><strong>Name:</strong> Clemente O.</p>
+                <p><strong>Role:</strong> Independent developer — LensLaber (sole trader / autónomo)</p>
+                <p><strong>Country of establishment:</strong> Spain</p>
+                <p><strong>Contact email:</strong> <a href="mailto:LensLaber@gmail.com">LensLaber@gmail.com</a></p>
+            </div>
+            <p>
+                LensLaber is operated by a single individual, not a company. There is no appointed Data Protection Officer (DPO), as this is not required for sole traders who do not carry out large-scale systematic processing of personal data (Article 37 GDPR). For any privacy-related query, contact the address above.
+            </p>
+
+            <!-- 2. WHAT WE COLLECT -->
+            <h2 id="section-2">
+                <i class="fas fa-database text-blue-400 text-base"></i> 2. What Data We Collect and Why
+            </h2>
+
+            <p><strong>The LensLaber software itself</strong> is offline-first and does not collect, transmit, or store any user data in the cloud. Your images, annotations, and local project files <strong>never leave your machine</strong>. No telemetry or usage analytics are sent from the application.</p>
+
+            <div class="info-box">
+                <p class="text-blue-300 text-xs font-bold uppercase tracking-wider mb-2"><i class="fas fa-info-circle mr-1"></i> Future release note</p>
+                <p class="text-slate-400 text-sm mb-0">The final commercial release will require a <strong>one-time online license activation check</strong>. This check will only transmit the minimum data necessary to validate the license (a license key and a machine-generated identifier). No annotation data or file paths will be transmitted. This policy will be updated before that release.</p>
+            </div>
+
+            <p>Through this <strong>website</strong>, we process the following personal data:</p>
+
+            <div class="overflow-x-auto mb-4">
+                <table class="w-full text-sm text-slate-400 border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-800">
+                            <th class="text-left py-2 pr-4 text-slate-300 font-semibold">Data</th>
+                            <th class="text-left py-2 pr-4 text-slate-300 font-semibold">Source</th>
+                            <th class="text-left py-2 text-slate-300 font-semibold">Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800/40">
+                            <td class="py-2 pr-4">Email address</td>
+                            <td class="py-2 pr-4">Newsletter subscription form (Google Forms)</td>
+                            <td class="py-2">Sending update notifications and new beta announcements</td>
+                        </tr>
+                        <tr class="border-b border-slate-800/40">
+                            <td class="py-2 pr-4">Name, email address, message content</td>
+                            <td class="py-2 pr-4">Contact form (EmailJS)</td>
+                            <td class="py-2">Responding to enquiries sent by the user</td>
+                        </tr>
+                        <tr class="border-b border-slate-800/40">
+                            <td class="py-2 pr-4">Name, email address, OS/version info, message content, screenshots (optional)</td>
+                            <td class="py-2 pr-4">Bug report / feedback form (EmailJS)</td>
+                            <td class="py-2">Diagnosing and resolving software issues</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>We do not collect payment information, physical addresses, IP addresses, browser fingerprints, or any sensitive categories of data (Article 9 GDPR).</p>
+
+            <!-- 3. LEGAL BASIS -->
+            <h2 id="section-3">
+                <i class="fas fa-scale-balanced text-blue-400 text-base"></i> 3. Legal Basis for Processing
+            </h2>
+            <p>Each processing activity rests on a specific legal basis under Article 6 GDPR:</p>
+            <ul>
+                <li><strong>Newsletter subscription (email only):</strong> Your freely given, specific, and informed <strong>consent</strong> (Article 6(1)(a) GDPR). You may withdraw this consent at any time.</li>
+                <li><strong>Contact and feedback forms:</strong> <strong>Legitimate interest</strong> (Article 6(1)(f) GDPR) — specifically, our legitimate interest in responding to user enquiries and improving the software. The processing is proportionate: only the minimum data needed to reply is collected.</li>
+            </ul>
+
+            <!-- 4. DATA RETENTION -->
+            <h2 id="section-4">
+                <i class="fas fa-clock text-blue-400 text-base"></i> 4. Data Retention
+            </h2>
+            <ul>
+                <li><strong>Newsletter email addresses</strong> are retained for as long as your subscription is active. You can unsubscribe at any time by emailing <a href="mailto:LensLaber@gmail.com">LensLaber@gmail.com</a>, after which your address will be removed within 30 days.</li>
+                <li><strong>Contact and feedback messages</strong> (received via email) are retained for a maximum of 24 months, or until the related matter is resolved, whichever comes first.</li>
+            </ul>
+            <p>After these periods, personal data is permanently deleted or anonymised.</p>
+
+            <!-- 5. THIRD PARTIES -->
+            <h2 id="section-5">
+                <i class="fas fa-share-nodes text-blue-400 text-base"></i> 5. Third-Party Sub-Processors
+            </h2>
+            <p>We do not sell or rent your personal data to any third party. However, we use the following sub-processors to operate this website:</p>
+
+            <div class="space-y-3 mb-4">
+                <div class="bg-slate-900/40 border border-slate-800/60 rounded-lg p-4">
+                    <p class="text-slate-200 font-semibold text-sm mb-1"><i class="fab fa-google text-blue-400 mr-2"></i>Google LLC — Google Forms &amp; Google Workspace</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Purpose:</strong> Newsletter subscription management.</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Data transferred:</strong> Email addresses submitted via the subscription form.</p>
+                    <p class="text-slate-400 text-xs"><strong>Privacy policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800/60 rounded-lg p-4">
+                    <p class="text-slate-200 font-semibold text-sm mb-1"><i class="fas fa-envelope text-blue-400 mr-2"></i>EmailJS (Emailjs.com, Inc.)</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Purpose:</strong> Routing contact and feedback form submissions to the developer's email inbox.</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Data transferred:</strong> Name, email address, and message content you voluntarily submit.</p>
+                    <p class="text-slate-400 text-xs"><strong>Privacy policy:</strong> <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">emailjs.com/legal/privacy-policy</a></p>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800/60 rounded-lg p-4">
+                    <p class="text-slate-200 font-semibold text-sm mb-1"><i class="fab fa-github text-blue-400 mr-2"></i>GitHub, Inc. (Microsoft)</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Purpose:</strong> Hosting binary releases and documentation.</p>
+                    <p class="text-slate-400 text-xs mb-1"><strong>Data transferred:</strong> Standard web server logs (IP address, browser) when downloading a release. We do not control or access these logs.</p>
+                    <p class="text-slate-400 text-xs"><strong>Privacy policy:</strong> <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></p>
+                </div>
+            </div>
+
+            <!-- 6. INTERNATIONAL TRANSFERS -->
+            <h2 id="section-6">
+                <i class="fas fa-earth-europe text-blue-400 text-base"></i> 6. International Data Transfers
+            </h2>
+            <p>
+                Google LLC and GitHub, Inc. are headquartered in the United States. The data they process on our behalf may therefore be transferred outside the European Economic Area (EEA). Both companies rely on <strong>Standard Contractual Clauses (SCCs)</strong> approved by the European Commission as the legal mechanism for such transfers, in accordance with Article 46(2)(c) GDPR.
+            </p>
+            <p>
+                EmailJS processes data within the EEA or under equivalent safeguards. We recommend reviewing their privacy policy for the latest information.
+            </p>
+
+            <!-- 7. YOUR RIGHTS -->
+            <h2 id="section-7">
+                <i class="fas fa-hand-fist text-blue-400 text-base"></i> 7. Your Rights
+            </h2>
+            <p>Under the GDPR and the Spanish Organic Law 3/2018 (LOPDGDD), you have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Right of access (Art. 15 GDPR):</strong> Request a copy of the personal data we hold about you.</li>
+                <li><strong>Right to rectification (Art. 16 GDPR):</strong> Ask us to correct inaccurate data.</li>
+                <li><strong>Right to erasure / "right to be forgotten" (Art. 17 GDPR):</strong> Request deletion of your data, where no legal obligation requires us to retain it.</li>
+                <li><strong>Right to restriction of processing (Art. 18 GDPR):</strong> Ask us to limit how we use your data in certain circumstances.</li>
+                <li><strong>Right to data portability (Art. 20 GDPR):</strong> Receive your data in a structured, machine-readable format.</li>
+                <li><strong>Right to object (Art. 21 GDPR):</strong> Object to processing based on legitimate interest.</li>
+                <li><strong>Right to withdraw consent:</strong> Where processing is based on consent, you may withdraw it at any time without affecting the lawfulness of prior processing.</li>
+                <li><strong>Right not to be subject to automated decisions (Art. 22 GDPR):</strong> We do not use automated decision-making or profiling.</li>
+            </ul>
+            <p>
+                To exercise any of these rights, send an email to <a href="mailto:LensLaber@gmail.com">LensLaber@gmail.com</a> with the subject line <span class="font-mono-custom text-xs text-slate-300 bg-slate-800 px-1.5 py-0.5 rounded">Privacy Request</span>. We will respond within <strong>30 days</strong>, as required by Article 12 GDPR.
+            </p>
+
+            <!-- 8. COOKIES -->
+            <h2 id="section-8">
+                <i class="fas fa-cookie-bite text-blue-400 text-base"></i> 8. Cookies and Tracking Technologies
+            </h2>
+            <p>
+                This website does not use analytics, advertising, or tracking cookies. We do not use Google Analytics, Facebook Pixel, or any other behavioural tracking tool.
+            </p>
+            <p>
+                Third-party scripts embedded in this page (Tailwind CDN, Font Awesome CDN, Google Fonts, EmailJS) may set their own technical cookies or log requests. These are strictly functional in nature. By using this website you acknowledge this limited third-party technical activity.
+            </p>
+            <div class="warn-box">
+                <p class="text-yellow-300 text-xs font-bold uppercase tracking-wider mb-1"><i class="fas fa-triangle-exclamation mr-1"></i> Note for Spanish / EU users</p>
+                <p class="text-slate-400 text-sm mb-0">Under the Spanish Law 34/2002 (LSSI-CE) and the ePrivacy Directive, even technically necessary cookies from third-party CDNs may require an information notice. If you implement any analytics or non-essential cookies in the future, a full cookie consent banner will be legally required.</p>
+            </div>
+
+            <!-- 9. CHILDREN -->
+            <h2 id="section-9">
+                <i class="fas fa-child text-blue-400 text-base"></i> 9. Children's Privacy
+            </h2>
+            <p>
+                LensLaber is a professional software tool not directed at children. We do not knowingly collect personal data from anyone under the age of 14 (the minimum age for consent under Article 8 GDPR as implemented by Spain's LOPDGDD, Article 7). If you believe a minor has submitted data to us, please contact us immediately at <a href="mailto:LensLaber@gmail.com">LensLaber@gmail.com</a> and we will delete it promptly.
+            </p>
+
+            <!-- 10. SECURITY -->
+            <h2 id="section-10">
+                <i class="fas fa-lock text-blue-400 text-base"></i> 10. Security Measures
+            </h2>
+            <p>
+                We apply technical and organisational measures appropriate to the risk, in accordance with Article 32 GDPR. These include: HTTPS encryption for all website traffic, limiting data collection to the minimum necessary, and using reputable third-party providers with their own security certifications.
+            </p>
+            <p>
+                In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify the competent supervisory authority (AEPD) within 72 hours, and affected individuals without undue delay, as required by Articles 33–34 GDPR.
+            </p>
+
+            <!-- 11. CHANGES -->
+            <h2 id="section-11">
+                <i class="fas fa-pen-to-square text-blue-400 text-base"></i> 11. Changes to This Policy
+            </h2>
+            <p>
+                We may update this Privacy Policy to reflect changes in the law, our services, or our data practices. When we do, we will update the "Last updated" date at the top of this page. For material changes, we will also notify subscribers by email. Continued use of the website or software after a change constitutes acceptance of the updated policy.
+            </p>
+
+            <!-- 12. SUPERVISORY AUTHORITY -->
+            <h2 id="section-12">
+                <i class="fas fa-landmark text-blue-400 text-base"></i> 12. Supervisory Authority
+            </h2>
+            <p>
+                As the data controller is established in Spain, the competent supervisory authority is the <strong>Agencia Española de Protección de Datos (AEPD)</strong>. If you believe your data protection rights have not been respected, you have the right to lodge a complaint with the AEPD:
+            </p>
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 mb-4 text-sm text-slate-300 space-y-1">
+                <p><strong>Agencia Española de Protección de Datos (AEPD)</strong></p>
+                <p>C/ Jorge Juan, 6 — 28001 Madrid, Spain</p>
+                <p>Website: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a></p>
+                <p>Telephone: +34 901 100 099</p>
+            </div>
+            <p>
+                Users outside Spain may also lodge a complaint with the supervisory authority of their EU/EEA member state of habitual residence.
+            </p>
+
+        </div><!-- end policy-section -->
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+            <p>&copy; 2026 LensLaber. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+                <a href="privacy.html" class="text-blue-400 transition">Privacy Policy</a>
+                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
+
