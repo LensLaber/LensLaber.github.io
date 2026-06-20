@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact LensLaber — get in touch with the developer.">
+    <title>Contact | LensLaber</title>
+    <link rel="icon" type="image/png" href="media/screenshots/logoLL.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!--
+    ═══════════════════════════════════════════════════════════
+    EMAILJS SETUP (same account as feedback.html)
+    ═══════════════════════════════════════════════════════════
+    Create a second Email Template for contact messages:
+      Subject: [LensLaber Contact] {{subject}}
+      Body:
+        From: {{from_name}} ({{from_email}})
+        Topic: {{topic}}
+
+        {{message}}
+
+    → Copy the new "Template ID" and replace YOUR_CONTACT_TEMPLATE_ID below.
+    Service ID and Public Key are the same as feedback.html.
+    ═══════════════════════════════════════════════════════════
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ↓↓↓ REPLACE WITH YOUR REAL PUBLIC KEY ↓↓↓
+        emailjs.init('Jp8fWB-QUHJ-lOAH8');
+    </script>
+
+    <style>
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Sora', sans-serif; }
+
+        .field {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgb(51 65 85);
+            border-radius: 0.5rem;
+            padding: 0.625rem 0.875rem;
+            color: #e2e8f0;
+            font-size: 0.875rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .field::placeholder { color: #475569; }
+        .field:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+        select.field { appearance: none; cursor: pointer; }
+        textarea.field { resize: vertical; min-height: 160px; }
+
+        /* Topic pills */
+        .topic-pill input[type="radio"] { display: none; }
+        .topic-pill label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgb(51 65 85);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #94a3b8;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+        .topic-pill input[type="radio"]:checked + label {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            color: #93c5fd;
+        }
+        .topic-pill label:hover { border-color: #475569; color: #cbd5e1; }
+
+        /* Contact info card */
+        .contact-card {
+            border: 1px solid rgb(30 41 59);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: rgba(15, 23, 42, 0.4);
+            transition: border-color 0.2s;
+        }
+        .contact-card:hover { border-color: rgba(59, 130, 246, 0.3); }
+
+        #form-success { display: none; }
+        #form-error   { display: none; }
+        .btn-loading  { pointer-events: none; opacity: 0.7; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
+
+    <nav class="glass sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
+                <span class="font-display font-bold text-xl text-white tracking-wide">LensLaber</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="features.html" class="hover:text-blue-400 transition">Features</a>
+                <a href="philosophy.html" class="hover:text-blue-400 transition">Philosophy</a>
+                <a href="index.html#download" class="hover:text-white transition">Download</a>
+                <div class="relative group">
+                    <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
+                    <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                        <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+        </div>
+    </nav>
+
+    <header class="py-16 px-6 text-center border-b border-slate-800/50">
+        <div class="max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-2 border border-slate-700 bg-slate-900/50 text-slate-400 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6">
+                <i class="fas fa-envelope text-blue-500"></i> Get in Touch
+            </div>
+            <h1 class="font-display text-4xl font-bold text-white mb-4">Contact</h1>
+            <p class="text-slate-400 text-base">
+                Questions about the project, collaboration ideas, or anything else — reach out directly. There's a real person on the other end.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-14">
+        <div class="grid md:grid-cols-5 gap-12">
+
+            <!-- LEFT: Contact info -->
+            <aside class="md:col-span-2 space-y-5">
+                <div>
+                    <h2 class="font-display font-bold text-white text-lg mb-1">Clemente O.</h2>
+                    <p class="text-slate-500 text-sm">Independent developer, LensLaber</p>
+                </div>
+
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    LensLaber is a solo project. Every message is read personally — expect a response within a few days.
+                </p>
+
+                <div class="space-y-3 pt-2">
+                    <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="contact-card flex items-center gap-3 group">
+                        <i class="fab fa-linkedin text-blue-400 text-lg w-5 text-center"></i>
+                        <div>
+                            <p class="text-white text-sm font-medium group-hover:text-blue-400 transition">LinkedIn</p>
+                            <p class="text-slate-600 text-xs">Clemente O.</p>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square text-slate-700 text-xs ml-auto group-hover:text-slate-500 transition"></i>
+                    </a>
+                    <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="contact-card flex items-center gap-3 group">
+                        <i class="fab fa-reddit text-orange-400 text-lg w-5 text-center"></i>
+                        <div>
+                            <p class="text-white text-sm font-medium group-hover:text-blue-400 transition">Reddit</p>
+                            <p class="text-slate-600 text-xs">u/LensLaber</p>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square text-slate-700 text-xs ml-auto group-hover:text-slate-500 transition"></i>
+                    </a>
+                    <a href="https://github.com/LensLaber" target="_blank" class="contact-card flex items-center gap-3 group">
+                        <i class="fab fa-github text-slate-400 text-lg w-5 text-center"></i>
+                        <div>
+                            <p class="text-white text-sm font-medium group-hover:text-blue-400 transition">GitHub</p>
+                            <p class="text-slate-600 text-xs">LensLaber</p>
+                        </div>
+                        <i class="fas fa-arrow-up-right-from-square text-slate-700 text-xs ml-auto group-hover:text-slate-500 transition"></i>
+                    </a>
+                </div>
+
+                <div class="pt-4 border-t border-slate-800">
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        For bug reports and technical issues, the
+                        <a href="feedback.html" class="text-blue-500 hover:text-blue-400 transition">feedback form</a>
+                        is more useful — it captures OS, version, and lets you attach screenshots.
+                    </p>
+                </div>
+            </aside>
+
+            <!-- RIGHT: Form -->
+            <div class="md:col-span-3">
+                <div id="contact-form-wrap" class="space-y-5">
+
+                    <!-- Topic -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Topic</label>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="topic-pill">
+                                <input type="radio" name="topic" id="topic-general" value="General question" checked>
+                                <label for="topic-general"><i class="fas fa-circle-question text-blue-400"></i> General</label>
+                            </div>
+                            <div class="topic-pill">
+                                <input type="radio" name="topic" id="topic-collab" value="Collaboration">
+                                <label for="topic-collab"><i class="fas fa-handshake text-green-400"></i> Collaboration</label>
+                            </div>
+                            <div class="topic-pill">
+                                <input type="radio" name="topic" id="topic-license" value="Licensing">
+                                <label for="topic-license"><i class="fas fa-file-contract text-yellow-400"></i> Licensing</label>
+                            </div>
+                            <div class="topic-pill">
+                                <input type="radio" name="topic" id="topic-other" value="Other">
+                                <label for="topic-other"><i class="fas fa-ellipsis text-slate-400"></i> Other</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Name + Email -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="from_name" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Name <span class="text-red-500">*</span></label>
+                            <input id="from_name" type="text" class="field" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="from_email" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Email <span class="text-red-500">*</span></label>
+                            <input id="from_email" type="email" class="field" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div>
+                        <label for="subject" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Subject <span class="text-red-500">*</span></label>
+                        <input id="subject" type="text" class="field" placeholder="What's on your mind?">
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Message <span class="text-red-500">*</span></label>
+                        <textarea id="message" class="field" placeholder="Tell me more…"></textarea>
+                    </div>
+
+                    <!-- Privacy -->
+                    <p class="text-slate-600 text-xs">
+                        <i class="fas fa-lock mr-1"></i>
+                        Your email is used only to reply to your message. It is never shared or used for marketing.
+                    </p>
+
+                    <!-- Submit -->
+                    <button id="submit-btn" onclick="handleSubmit()"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane text-xs"></i>
+                        Send Message
+                    </button>
+                </div>
+
+                <!-- SUCCESS -->
+                <div id="form-success" class="text-center py-16">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 border border-green-500/30 mb-6">
+                        <i class="fas fa-check text-green-400 text-2xl"></i>
+                    </div>
+                    <h2 class="font-display text-2xl font-bold text-white mb-3">Message sent</h2>
+                    <p class="text-slate-400 text-sm max-w-xs mx-auto mb-8">I'll get back to you within a few days. Thanks for reaching out.</p>
+                    <a href="index.html" class="text-blue-400 hover:text-blue-300 text-sm transition">← Back to LensLaber</a>
+                </div>
+
+                <!-- ERROR -->
+                <div id="form-error" class="mt-4 bg-red-900/20 border border-red-800/50 rounded-lg px-5 py-4 flex items-start gap-3">
+                    <i class="fas fa-triangle-exclamation text-red-400 mt-0.5 shrink-0"></i>
+                    <div>
+                        <p class="text-red-300 text-sm font-semibold">Failed to send</p>
+                        <p class="text-slate-400 text-xs mt-1">Something went wrong. Please try again or reach out via <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="text-blue-400 hover:underline">LinkedIn</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+            <p>&copy; 2026 LensLaber. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="contact.html" class="text-blue-400 transition">Contact</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function handleSubmit() {
+            const name    = document.getElementById('from_name').value.trim();
+            const email   = document.getElementById('from_email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const topicEl = document.querySelector('input[name="topic"]:checked');
+            const topic   = topicEl ? topicEl.value : 'General question';
+
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields (Name, Email, Subject, Message).');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            const btn = document.getElementById('submit-btn');
+            btn.classList.add('btn-loading');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin text-xs"></i> Sending…';
+
+            const params = { from_name: name, from_email: email, subject, message, topic };
+
+            try {
+                // ↓↓↓ REPLACE WITH YOUR SERVICE ID AND CONTACT TEMPLATE ID ↓↓↓
+                await emailjs.send('service_zwnws3c', 'template_5teit9v', params);
+
+                document.getElementById('contact-form-wrap').style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('form-error').style.display = 'none';
+            } catch (err) {
+                console.error('EmailJS error:', err);
+                btn.classList.remove('btn-loading');
+                btn.innerHTML = '<i class="fas fa-paper-plane text-xs"></i> Send Message';
+                document.getElementById('form-error').style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>
