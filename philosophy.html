@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LensLaber Philosophy: Why constraint is the origin of good software.">
+    <title>Philosophy | LensLaber</title>
+    <link rel="icon" type="image/png" href="media/screenshots/logoLL.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-glow: rgba(59, 130, 246, 0.15);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .font-display { font-family: 'DM Serif Display', serif; }
+        .font-mono-dm { font-family: 'DM Mono', monospace; }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        /* The signature element: the machine spec as a visual artifact */
+        .machine-spec {
+            border-left: 1px solid rgba(59, 130, 246, 0.4);
+            position: relative;
+        }
+
+        .machine-spec::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -1px;
+            width: 1px; height: 40%;
+            background: linear-gradient(to bottom, #3b82f6, transparent);
+        }
+
+        /* Pullquote treatment */
+        .pullquote {
+            border-left: 3px solid #3b82f6;
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.05), transparent);
+        }
+
+        /* Subtle scan-line on the spec block for texture */
+        .spec-block {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255,255,255,0.0),
+                rgba(255,255,255,0.0) 1px,
+                rgba(255,255,255,0.015) 1px,
+                rgba(255,255,255,0.015) 2px
+            ), rgba(15, 23, 42, 0.6);
+        }
+
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animated underline for the hero */
+        .hero-underline {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            background-size: 0% 2px;
+            background-repeat: no-repeat;
+            background-position: 0 100%;
+            transition: background-size 1.2s ease 0.6s;
+        }
+
+        .hero-underline.animated {
+            background-size: 100% 2px;
+        }
+
+        /* Reading width constraint for prose */
+        .prose-width { max-width: 68ch; }
+
+        /* Divider with icon */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(100, 116, 139, 0.3), transparent);
+        }
+
+        .section-divider::before { background: linear-gradient(to right, transparent, rgba(100, 116, 139, 0.3)); }
+        .section-divider::after { background: linear-gradient(to left, transparent, rgba(100, 116, 139, 0.3)); }
+
+        /* Metric pill */
+        .metric-pill {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.75rem;
+            background: rgba(59, 130, 246, 0.04);
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .metric-pill:hover {
+            border-color: rgba(59, 130, 246, 0.45);
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in { opacity: 1; transform: none; transition: none; }
+            .hero-underline { background-size: 100% 2px; }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
+
+    <!-- NAV (consistent with rest of site) -->
+    <nav class="glass sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
+                <span class="font-bold text-xl text-white tracking-wide" style="font-family: 'DM Sans', sans-serif;">LensLaber</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="features.html" class="hover:text-white transition">Features</a>
+                <a href="philosophy.html" class="text-white font-semibold transition">Philosophy</a>
+                <a href="index.html#download" class="hover:text-white transition">Download</a>
+                <div class="relative group">
+                    <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
+                    <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+                        <a href="mailto:LensLaber@gmail.com?subject=LensLaber%20Beta%20-%20Bug%20Report" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                        <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative overflow-hidden pt-28 pb-24 px-6">
+        <!-- Ambient glow -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div style="position:absolute; top:-10%; left:50%; transform:translateX(-50%); width:900px; height:600px; background:radial-gradient(ellipse at center, rgba(59,130,246,0.07) 0%, transparent 70%);"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <p class="font-mono-dm text-blue-400 text-xs tracking-[0.2em] uppercase mb-8 fade-in">Design Principles</p>
+            <h1 class="font-display text-5xl md:text-7xl text-white leading-[1.08] tracking-tight mb-10 fade-in" style="transition-delay: 0.1s;">
+                Constraint is not<br>
+                <em class="text-blue-400 hero-underline not-italic">a compromise.</em><br>
+                <span class="text-slate-300">It is the method.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 prose-width leading-relaxed fade-in" style="transition-delay: 0.2s;">
+                Most software is built assuming abundant resources. LensLaber was built assuming the opposite — and that single inversion shaped everything.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-28 pb-28">
+
+        <!-- SECTION 1: The origin -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">I</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                The machine that built the machine
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed mb-12">
+                <p>
+                    LensLaber was developed entirely on a laptop from 2015. Not as a stunt, not as a talking point — it was simply the hardware available. There was no budget for a workstation, no cloud VM to offload inference to, no high-end GPU to paper over inefficiency.
+                </p>
+                <p>
+                    The natural reaction would have been to work around those limits. The choice made here was the opposite: to treat them as the specification.
+                </p>
+                <p>
+                    If automated detection and segmentation had to run locally on an i5-4200U with 8 GB of RAM, then the software had to be lean enough to actually make that work — not in a demo, but in a real annotation session, on a real 20,000-image dataset.
+                </p>
+            </div>
+
+            <!-- The signature element: machine spec as art -->
+            <div class="spec-block rounded-2xl p-8 md:p-10 border border-slate-800 machine-spec">
+                <p class="font-mono-dm text-slate-500 text-xs tracking-[0.2em] uppercase mb-8">Development Machine — 2015</p>
+                <div class="grid sm:grid-cols-2 gap-x-12 gap-y-5">
+                    <div>
+                        <p class="font-mono-dm text-slate-600 text-xs mb-1">CPU</p>
+                        <p class="font-mono-dm text-slate-200 text-sm">Intel® Core™ i5-4200U<br><span class="text-slate-500">1.60 GHz base · 2.30 GHz boost</span></p>
+                    </div>
+                    <div>
+                        <p class="font-mono-dm text-slate-600 text-xs mb-1">RAM</p>
+                        <p class="font-mono-dm text-slate-200 text-sm">8.00 GB<br><span class="text-slate-500">7.89 GB usable</span></p>
+                    </div>
+                    <div>
+                        <p class="font-mono-dm text-slate-600 text-xs mb-1">GPU</p>
+                        <p class="font-mono-dm text-slate-200 text-sm">NVIDIA GeForce 820M<br><span class="text-slate-500">980 MB · Intel HD Graphics (shared)</span></p>
+                    </div>
+                    <div>
+                        <p class="font-mono-dm text-slate-600 text-xs mb-1">Storage</p>
+                        <p class="font-mono-dm text-slate-200 text-sm">112 GB SSD<br><span class="text-slate-500">SanDisk</span></p>
+                    </div>
+                </div>
+                <div class="mt-10 pt-8 border-t border-slate-800/60">
+                    <p class="font-mono-dm text-slate-600 text-xs mb-6 tracking-[0.2em] uppercase">Runtime on this hardware</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="metric-pill">
+                            <span class="font-display text-2xl text-blue-400">~750 MB</span>
+                            <span class="font-mono-dm text-slate-500 text-xs mt-1">avg. RAM usage</span>
+                        </div>
+                        <div class="metric-pill">
+                            <span class="font-display text-2xl text-blue-400">20–35%</span>
+                            <span class="font-mono-dm text-slate-500 text-xs mt-1">CPU during inference</span>
+                        </div>
+                        <div class="metric-pill">
+                            <span class="font-display text-2xl text-blue-400">20K+</span>
+                            <span class="font-mono-dm text-slate-500 text-xs mt-1">images, no slowdown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Offline -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">II</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                Your data never leaves your machine
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed mb-10">
+                <p>
+                    Cloud annotation platforms make a quiet assumption: that your images are disposable, or at least shareable. Send them up, process them, get results back. Convenient — until you're working with proprietary industrial data, medical imagery, or anything that carries legal or competitive weight.
+                </p>
+                <p>
+                    LensLaber is 100% offline by design. Not as a checkbox feature. The inference engine, the SAM integration, the augmentation pipeline — everything runs locally. No telemetry. No upload step hidden behind a loading bar.
+                </p>
+                <p>
+                    This is not about being anti-cloud. It is about recognizing that for annotation work, the cloud is often a liability dressed as convenience.
+                </p>
+            </div>
+            <div class="pullquote rounded-r-xl px-8 py-6 prose-width">
+                <p class="font-display text-xl md:text-2xl text-slate-200 italic leading-snug">
+                    "Absolute data privacy is not a selling point. It is a baseline that should never have required justification."
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The AI paradox -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">III</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                AI tools that don't demand a GPU
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed mb-10">
+                <p>
+                    There is a certain irony in the annotation space: the tools most likely to require GPU acceleration are the ones you use to generate the data that trains the models that will eventually need GPUs. Somewhere in that loop, the cart got in front of the horse.
+                </p>
+                <p>
+                    YOLO and SAM integration in LensLaber runs through ONNX Runtime — no PyTorch, no Ultralytics, no framework that drags in six gigabytes of dependencies. The inference that happens is real inference, not a stripped-down preview mode. It runs on the CPU, comfortably, on hardware from a decade ago.
+                </p>
+                <p>
+                    That is a deliberate engineering position, not a limitation waiting to be lifted.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-4 mt-10">
+                <div class="border border-slate-800 rounded-xl p-5 bg-slate-900/30">
+                    <i class="fas fa-microchip text-blue-400 mb-4 text-lg"></i>
+                    <h4 class="text-white font-semibold text-sm mb-2">ONNX Runtime</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">No heavy framework dependencies. Just the model and the runtime, directly.</p>
+                </div>
+                <div class="border border-slate-800 rounded-xl p-5 bg-slate-900/30">
+                    <i class="fas fa-brain text-blue-400 mb-4 text-lg"></i>
+                    <h4 class="text-white font-semibold text-sm mb-2">MobileSAM</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Segmentation refined for CPU-first systems. Real masks, not approximations.</p>
+                </div>
+                <div class="border border-slate-800 rounded-xl p-5 bg-slate-900/30">
+                    <i class="fas fa-box-open text-blue-400 mb-4 text-lg"></i>
+                    <h4 class="text-white font-semibold text-sm mb-2">Bring your own YOLO</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Load any YOLO ONNX weights. The engine is model-agnostic by design.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Human control -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">IV</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                Semi-automation, full control
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed">
+                <p>
+                    The annotation tools that over-automate tend to produce the same failure mode: the human stops paying attention, and the errors compound quietly. A model that is 95% accurate sounds impressive until you realize that across 10,000 images, that is 500 silent mistakes in your training data.
+                </p>
+                <p>
+                    LensLaber treats automation as acceleration, not replacement. YOLO proposes. SAM refines. The false negative review flags what the model missed. But at every step, the annotator remains in the loop — not as an afterthought, but as the point.
+                </p>
+                <p>
+                    Fast Mode, configurable shortcuts, context-aware tools — these exist to reduce the <em>friction</em> of human work, not to route around it.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: The i3 test -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">V</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                The i3 test
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed mb-10">
+                <p>
+                    At some point during development, LensLaber was tested on an Intel i3 with 4 GB of RAM. It worked. Not in a limited-feature mode, not with caveats — it worked. That became an unofficial benchmark: if something breaks the i3, it is a bug, not a hardware problem.
+                </p>
+                <p>
+                    This matters because the global distribution of hardware is not centered on the latest MacBook Pro. Researchers in constrained environments, students, independent practitioners — a large portion of the people who would benefit most from capable annotation tooling are exactly the ones that existing tools ignore.
+                </p>
+                <p>
+                    That gap is intentional to fill.
+                </p>
+            </div>
+            <div class="pullquote rounded-r-xl px-8 py-6 prose-width">
+                <p class="font-display text-xl md:text-2xl text-slate-200 italic leading-snug">
+                    "The i3 test is not about supporting old hardware. It is about refusing to be lazy."
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Beta honesty -->
+        <section class="fade-in">
+            <div class="section-divider mb-14">
+                <span class="font-mono-dm text-slate-600 text-xs tracking-widest uppercase">VI</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl text-white mb-8 leading-snug">
+                What beta actually means here
+            </h2>
+            <div class="prose-width space-y-5 text-slate-400 text-base leading-relaxed">
+                <p>
+                    LensLaber is in public beta. That word gets overloaded, so it is worth being specific: the core workflows are stable and production-capable. The beta designation reflects honest uncertainty about edge cases, hardware combinations, and the roadmap, not about whether the software does what it says.
+                </p>
+                <p>
+                    The 30-day trial window, the export limits — these are temporary calibration tools, not revenue mechanisms. They exist to get real feedback from real annotation workloads, so that future decisions are grounded in evidence rather than assumption.
+                </p>
+                <p>
+                    If you use it and find something broken, that is useful. If you use it and find it works well, that is equally useful. Either way, the feedback shapes the next version directly.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA — earned, not forced -->
+        <section class="fade-in">
+            <div class="relative rounded-2xl overflow-hidden border border-slate-800">
+                <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 30% 50%, rgba(59,130,246,0.07) 0%, transparent 65%);"></div>
+                <div class="relative px-10 py-14 md:flex md:items-center md:justify-between gap-8">
+                    <div class="mb-8 md:mb-0">
+                        <p class="font-mono-dm text-blue-400 text-xs tracking-[0.2em] uppercase mb-3">Public Beta · Free to try</p>
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-3 leading-snug">
+                            Run it on what you have.
+                        </h3>
+                        <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+                            Windows and Linux. No account. No cloud. Works on hardware from a decade ago.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+                        <a href="index.html#download"
+                           class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-lg font-semibold text-sm transition shadow-lg shadow-blue-500/20 whitespace-nowrap">
+                            <i class="fas fa-download text-xs"></i> Download Beta
+                        </a>
+                        <a href="features.html"
+                           class="inline-flex items-center justify-center gap-2 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white px-7 py-3 rounded-lg font-semibold text-sm transition whitespace-nowrap">
+                            See Features →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-slate-600 text-xs text-center mt-5 font-mono-dm">
+                VirusTotal clean · SHA-256 verified · 0 telemetry
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+            <p>&copy; 2026 LensLaber. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="mailto:LensLaber@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Hero underline animation on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.hero-underline')?.classList.add('animated');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
