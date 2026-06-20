@@ -17,24 +17,22 @@
     <nav class="glass sticky top-0 z-50 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
                 <span class="font-bold text-xl text-white tracking-wide">LensLaber</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="features.html" class="text-white font-semibold transition">Features</a>
                 <a href="philosophy.html" class="hover:text-blue-400 transition">Philosophy</a>
-                <a href="index.html#download" class="hover:text-white transition">Download</a>
             </div>
-            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition">Get Beta</a>
         </div>
     </nav>
 
     <header class="py-20 px-6 text-center max-w-5xl mx-auto border-b border-slate-800/50">
         <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Engineered for <span class="text-blue-500">Scale and Precision</span>
+            Engineered for <span class="text-blue-500">Scale and Stability</span>
         </h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-            Practical annotation workflows for large computer vision datasets. Built to deliver high performance without relying on cloud services.
+            Flujos de trabajo de anotación prácticos para grandes volúmenes de datos. Optimizado para ofrecer estabilidad operativa incluso en hardware modesto, sin dependencias de la nube.
         </p>
     </header>
 
@@ -48,8 +46,12 @@
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">YOLO + SAM Workflow</h3>
-                        <p class="text-slate-400 text-sm">Combines YOLO-based detection with SAM Mobile-assisted refinement.</p>
+                        <h3 class="text-xl font-bold text-white mb-2">YOLO + MobileSAM Integration</h3>
+                        <p class="text-slate-400 text-sm">Integramos MobileSAM para segmentación asistida. El motor de detección es totalmente agnóstico: carga tus propios pesos YOLO en formato ONNX para mantener el control total de tus modelos sin dependencias externas.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Native ONNX Inference</h3>
+                        <p class="text-slate-400 text-sm">Ejecución local mediante ONNX Runtime. Evitamos el uso de frameworks pesados como PyTorch o Ultralytics para garantizar compatibilidad, evitar problemas de licencias y maximizar la eficiencia en tu hardware.</p>
                     </div>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-2 shadow-2xl">
@@ -74,30 +76,38 @@
                     </video>
                 </div>
                 <div class="order-1 md:order-2 space-y-6 text-lg text-slate-300">
-                    <p><b>Fast Mode:</b> Enables rapid class assignment during annotation.</p>
+                    <p><b>Fast Mode:</b> Interfaz diseñada para reducir la fricción en tareas repetitivas, permitiendo asignaciones de clase instantáneas.</p>
+                    <p><b>Herramientas versátiles:</b> Soporte nativo para Bounding Boxes, Polígonos, Puntos y Líneas, manteniendo siempre la precisión bajo tu supervisión.</p>
                 </div>
             </div>
         </section>
 
         <section>
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-8 w-1 bg-blue-600 rounded"></div>
+                <h2 class="text-3xl font-bold text-white">Quality Control & Data Ops</h2>
+            </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-white mb-3">False Negative Review</h4>
-                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                    <h4 class="font-bold text-white mb-3">Revisión de Falsos Negativos</h4>
+                    <p class="text-sm text-slate-400 mb-4">Herramienta dedicada para detectar omisiones del modelo. Filtra y revisa automáticamente las áreas donde el modelo carece de confianza, asegurando la integridad del dataset.</p>
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700">
                         <source src="media/webm/false_negative_review.webm" type="video/webm">
                         <source src="media/mp4/false_negative_review.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-white mb-3">Built-in Augmentations</h4>
-                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                    <h4 class="font-bold text-white mb-3">Aumentos en Exportación</h4>
+                    <p class="text-sm text-slate-400 mb-4">Aplica transformaciones geométricas y de color de forma dinámica al exportar. Prepara tus datos para el entrenamiento sin alterar tus archivos originales.</p>
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700">
                         <source src="media/webm/augmentations_workflow.webm" type="video/webm">
                         <source src="media/mp4/augmentations_workflow.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
-                    <h4 class="font-bold text-white mb-3">Real-time Statistics</h4>
-                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                    <h4 class="font-bold text-white mb-3">Estadísticas en Tiempo Real</h4>
+                    <p class="text-sm text-slate-400 mb-4">Dashboard con métricas instantáneas sobre la distribución de tus clases y el progreso del etiquetado. Identifica desequilibrios en el dataset antes de exportar.</p>
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700">
                         <source src="media/webm/statistics.webm" type="video/webm">
                         <source src="media/mp4/statistics.mp4" type="video/mp4">
                     </video>
@@ -106,30 +116,20 @@
         </section>
     </main>
 
-    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50 mt-20">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-            <p>&copy; 2026 LensLaber. All rights reserved.</p>
-        </div>
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50 mt-20 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 LensLaber. All rights reserved.</p>
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const lazyVideos = [].slice.call(document.querySelectorAll("video.lazy-video"));
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const video = entry.target;
-                if (entry.isIntersecting) {
-                    if (!video.lazyLoaded) {
-                        video.load();
-                        video.lazyLoaded = true;
-                    }
-                    video.play().catch(() => {});
-                } else {
-                    video.pause();
-                }
+    document.addEventListener("DOMContentLoaded", () => {
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                const v = e.target;
+                if(e.isIntersecting) { v.load(); v.play().catch(()=>{}); }
+                else { v.pause(); }
             });
         }, { threshold: 0.1 });
-        lazyVideos.forEach(v => videoObserver.observe(v));
+        document.querySelectorAll(".lazy-video").forEach(v => obs.observe(v));
     });
     </script>
 </body>
