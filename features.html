@@ -24,14 +24,6 @@
                 <a href="features.html" class="text-white font-semibold transition">Features</a>
                 <a href="philosophy.html" class="hover:text-blue-400 transition">Philosophy</a>
                 <a href="index.html#download" class="hover:text-white transition">Download</a>
-                <div class="relative group">
-                    <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
-                    <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
-                        <a href="mailto:LensLaber@gmail.com" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
-                        <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
-                        <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
-                    </div>
-                </div>
             </div>
             <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
         </div>
@@ -42,7 +34,7 @@
             Engineered for <span class="text-blue-500">Scale and Precision</span>
         </h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-            Practical annotation workflows for large computer vision datasets. Built to deliver high performance without relying on cloud services or high-end hardware.
+            Practical annotation workflows for large computer vision datasets. Built to deliver high performance without relying on cloud services.
         </p>
     </header>
 
@@ -53,20 +45,18 @@
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
                 <h2 class="text-3xl font-bold text-white">AI-Powered Automation</h2>
             </div>
-            
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="space-y-8">
                     <div>
                         <h3 class="text-xl font-bold text-white mb-2">YOLO + SAM Workflow</h3>
-                        <p class="text-slate-400 text-sm">Combines YOLO-based detection with SAM Mobile-assisted refinement, delivering semi-automatic annotation while maintaining full manual control.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Local Inference</h3>
-                        <p class="text-slate-400 text-sm">LensLaber supports user-provided YOLO ONNX models. All inference runs entirely offline on your hardware.</p>
+                        <p class="text-slate-400 text-sm">Combines YOLO-based detection with SAM Mobile-assisted refinement.</p>
                     </div>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-2 shadow-2xl">
-                    <img src="media/webp/yolo_sam_workflow.webp" loading="lazy" alt="YOLO SAM Workflow" class="rounded-lg w-full">
+                    <video muted loop playsinline preload="none" class="lazy-video rounded-lg w-full">
+                        <source src="media/webm/yolo_sam_workflow.webm" type="video/webm">
+                        <source src="media/mp4/yolo_sam_workflow.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </section>
@@ -76,64 +66,71 @@
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
                 <h2 class="text-3xl font-bold text-white">High-Speed Annotation</h2>
             </div>
-            
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1 bg-slate-900 border border-slate-800 rounded-xl p-2 shadow-2xl">
-                    <img src="media/webp/fast_mode.webp" loading="lazy" alt="Fast Mode" class="rounded-lg w-full">
+                    <video muted loop playsinline preload="none" class="lazy-video rounded-lg w-full">
+                        <source src="media/webm/fast_mode.webm" type="video/webm">
+                        <source src="media/mp4/fast_mode.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="order-1 md:order-2 space-y-6 text-lg text-slate-300">
-                    <p><b class="text-white">Fast Mode:</b> Enables rapid class assignment during annotation, minimizing repetitive UI interactions.</p>
-                    <p><b class="text-white">Precision Tools:</b> Support for Bounding Boxes, Polygons, Points, and Lines.</p>
-                    <p><b class="text-white">Large Datasets:</b> Engineered to remain responsive when working with datasets containing 20,000+ images.</p>
+                    <p><b>Fast Mode:</b> Enables rapid class assignment during annotation.</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="flex items-center gap-4 mb-10">
-                <div class="h-8 w-1 bg-blue-600 rounded"></div>
-                <h2 class="text-3xl font-bold text-white">Quality Control & Data Ops</h2>
-            </div>
-            
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
                     <h4 class="font-bold text-white mb-3">False Negative Review</h4>
-                    <p class="text-sm text-slate-400 mb-4">Automatically highlight low-confidence predictions for manual review and verification.</p>
-                    <img src="media/webp/false_negative_review.webp" loading="lazy" alt="False Negative Review" class="rounded border border-slate-700 w-full">
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                        <source src="media/webm/false_negative_review.webm" type="video/webm">
+                        <source src="media/mp4/false_negative_review.mp4" type="video/mp4">
+                    </video>
                 </div>
-                
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
                     <h4 class="font-bold text-white mb-3">Built-in Augmentations</h4>
-                    <p class="text-sm text-slate-400 mb-4">Apply geometric, color, and noise transformations on-the-fly during export.</p>
-                    <img src="media/webp/augmentations_workflow.webp" loading="lazy" alt="Built-in Augmentations" class="rounded border border-slate-700 w-full">
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                        <source src="media/webm/augmentations_workflow.webm" type="video/webm">
+                        <source src="media/mp4/augmentations_workflow.mp4" type="video/mp4">
+                    </video>
                 </div>
-
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
                     <h4 class="font-bold text-white mb-3">Real-time Statistics</h4>
-                    <p class="text-sm text-slate-400 mb-4">Actionable insights into dataset composition, class imbalance, and annotation progress.</p>
-                    <img src="media/webp/statistics.webp" loading="lazy" alt="Real-time Statistics" class="rounded border border-slate-700 w-full">
+                    <video muted loop playsinline preload="none" class="lazy-video w-full rounded">
+                        <source src="media/webm/statistics.webm" type="video/webm">
+                        <source src="media/mp4/statistics.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </section>
-
-        <section class="bg-blue-900/10 border border-blue-900/30 rounded-2xl p-10 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6">Seamless Export Pipeline</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto mb-8">Generate Train/Validation/Test splits with customizable data stratification. Export annotations instantly with format support designed for modern machine learning frameworks.</p>
-            <a href="index.html#download" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold transition shadow-lg shadow-blue-600/20">Download and Test</a>
-        </section>
-
     </main>
 
-    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
-        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
             <p>&copy; 2026 LensLaber. All rights reserved.</p>
-            <div class="flex items-center gap-6">
-                <a href="mailto:LensLaber@gmail.com" class="hover:text-blue-400 transition">Contact</a>
-                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
-                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
-                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
-            </div>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyVideos = [].slice.call(document.querySelectorAll("video.lazy-video"));
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    if (!video.lazyLoaded) {
+                        video.load();
+                        video.lazyLoaded = true;
+                    }
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.1 });
+        lazyVideos.forEach(v => videoObserver.observe(v));
+    });
+    </script>
 </body>
 </html>
