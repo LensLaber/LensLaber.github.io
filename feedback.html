@@ -56,7 +56,7 @@
         .field {
             width: 100%;
             background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgb(51 65 85); /* slate-700 */
+            border: 1px solid rgb(51 65 85);
             border-radius: 0.5rem;
             padding: 0.625rem 0.875rem;
             color: #e2e8f0;
@@ -136,7 +136,7 @@
                 <div class="relative group">
                     <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
                     <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
-                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-slate-300 font-semibold text-blue-400"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-blue-400 font-semibold"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
                         <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
                         <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
                     </div>
@@ -241,17 +241,17 @@
                     </label>
                     <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
                         <i class="fas fa-cloud-arrow-up text-slate-600 text-2xl mb-2"></i>
-                        <p class="text-slate-500 text-sm">Click to attach or drag & drop</p>
+                        <p class="text-slate-500 text-sm">Click to attach or drag &amp; drop</p>
                         <p class="text-slate-600 text-xs mt-1">PNG, JPG, TXT, LOG — up to 5 MB</p>
                         <input id="file-input" type="file" class="hidden" accept=".png,.jpg,.jpeg,.txt,.log" multiple>
                     </div>
                     <div id="file-list" class="mt-2 space-y-1"></div>
                 </div>
 
-                <!-- Privacy note -->
-                <p class="text-slate-600 text-xs">
-                    <i class="fas fa-lock mr-1"></i>
-                    Your information is used solely to process this report and reply if needed. It is never shared with third parties.
+                <!-- GDPR notice — legally required before submit -->
+                <p class="text-slate-500 text-xs leading-relaxed">
+                    <i class="fas fa-shield-halved text-slate-600 mr-1"></i>
+                    By submitting this form you acknowledge that any information you provide (including name, email address, operating system, and message content) will be processed by the developer of LensLaber solely to diagnose and resolve your report, via <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 underline">EmailJS</a>. Name and email are optional and will only be used to reply to you. Your data will not be used for marketing or shared with third parties. See our <a href="privacy.html" class="text-blue-500 hover:text-blue-400 underline">Privacy Policy</a>.
                 </p>
 
                 <!-- Submit -->
@@ -278,7 +278,7 @@
             <i class="fas fa-triangle-exclamation text-red-400 mt-0.5 shrink-0"></i>
             <div>
                 <p class="text-red-300 text-sm font-semibold">Failed to send</p>
-                <p class="text-slate-400 text-xs mt-1">Something went wrong. Please try again or email directly at <span class="text-blue-400">LensLaber@gmail.com</span></p>
+                <p class="text-slate-400 text-xs mt-1">Something went wrong. Please try again or email directly at <a href="mailto:LensLaber@gmail.com" class="text-blue-400 hover:underline">LensLaber@gmail.com</a></p>
             </div>
         </div>
 
@@ -395,8 +395,7 @@
                 message:       message,
             };
 
-            // Attach files as base64 if any (EmailJS supports up to ~2 attachments natively via template)
-            // For simplicity: embed file names and count in the message body
+            // Embed file names and sizes in the message body (EmailJS free plan does not support binary attachments)
             if (attachedFiles.length > 0) {
                 params.message += `\n\n---\nAttachments (${attachedFiles.length} file(s)): ` +
                     attachedFiles.map(f => `${f.name} (${(f.size/1024).toFixed(0)} KB)`).join(', ');
