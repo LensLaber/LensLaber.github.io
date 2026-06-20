@@ -2,9 +2,10 @@
 
 Offline-first annotation tool for computer vision datasets.
 
-Markdown >Proprietary Software
+> [!IMPORTANT]
+> **Project Status: Proprietary Software**
+> LensLaber is a closed-source, proprietary application. This repository is used exclusively as a distribution server for binary releases and a central documentation hub. The source code is not public.
 
-LensLaber is a closed-source. This repository serves as a distribution and documentation hub for beta releases, technical requirements, and release notes. The source code is not public 
 
 ![Main Workflow](media/gifs/gif_lens.gif)
 
