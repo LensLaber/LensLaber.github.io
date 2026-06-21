@@ -8,17 +8,53 @@
     <link rel="icon" type="image/png" href="media/screenshots/logoLL.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Sora', sans-serif; }
+        .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+        /* ── Mobile nav ── */
+        #mobile-menu {
+            display: none; flex-direction: column;
+            background: rgba(9,15,30,0.98); backdrop-filter: blur(16px);
+            border-top: 1px solid rgb(30 41 59);
+            padding: 1rem 1.5rem 1.5rem; gap: 0.25rem;
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a, #mobile-menu .mob-section-title {
+            display: block; padding: 0.65rem 0.5rem;
+            font-size: 0.95rem; font-weight: 500; color: #94a3b8;
+            border-bottom: 1px solid rgba(30,41,59,0.6);
+            text-decoration: none; transition: color 0.15s;
+        }
+        #mobile-menu a:last-child { border-bottom: none; }
+        #mobile-menu a:hover { color: #60a5fa; }
+        #mobile-menu a.mob-active { color: #fff; font-weight: 600; }
+        #mobile-menu .mob-section-title {
+            color: #475569; font-size: 0.7rem; letter-spacing: 0.1em;
+            text-transform: uppercase; font-weight: 700;
+            padding-bottom: 0.3rem; border-bottom: none; margin-top: 0.5rem;
+        }
+        #mobile-menu a.mob-cta {
+            margin-top: 0.75rem; background: #2563eb; color: #fff;
+            text-align: center; border-radius: 0.5rem; padding: 0.75rem;
+            font-weight: 700; border-bottom: none;
+        }
+        #mobile-menu a.mob-cta:hover { background: #1d4ed8; color: #fff; }
+        #hamburger { display: flex; }
+        @media (min-width: 768px) { #hamburger { display: none; } #mobile-menu { display: none !important; } }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans leading-relaxed selection:bg-blue-500/30">
+<body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
 
     <nav class="glass sticky top-0 z-50 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
-                <span class="font-bold text-xl text-white tracking-wide">LensLaber</span>
+                <span class="font-display font-bold text-xl text-white tracking-wide">LensLaber</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="features.html" class="text-white font-semibold transition">Features</a>
@@ -27,18 +63,36 @@
                 <div class="relative group">
                     <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
                     <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
-                        <a href="mailto:LensLaber@gmail.com?subject=LensLaber%20Beta%20-%20Bug%20Report" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
                         <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
                         <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
                     </div>
                 </div>
             </div>
-            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+            <div class="flex items-center gap-2">
+                <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+                <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                    class="flex flex-col justify-center items-center gap-1.5 w-9 h-9 rounded-lg border border-slate-700 hover:border-slate-500 transition bg-slate-900/60">
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+            <a href="features.html" class="mob-active">Features</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="index.html#download">Download</a>
+            <span class="mob-section-title">Support</span>
+            <a href="feedback.html"><i class="fas fa-bug mr-2 text-red-400"></i>Report an Issue</a>
+            <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank"><i class="fab fa-linkedin mr-2 text-blue-400"></i>LinkedIn</a>
+            <a href="https://www.reddit.com/user/LensLaber/" target="_blank"><i class="fab fa-reddit mr-2 text-orange-400"></i>Reddit</a>
+            <a href="index.html#download" class="mob-cta"><i class="fas fa-download mr-2"></i>Get Beta</a>
         </div>
     </nav>
 
     <header class="py-20 px-6 text-center max-w-5xl mx-auto border-b border-slate-800/50">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
+        <h1 class="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
             Engineered for <span class="text-blue-500">Scale and Stability</span>
         </h1>
         <p class="text-lg text-slate-400 max-w-2xl mx-auto">
@@ -51,16 +105,16 @@
         <section>
             <div class="flex items-center gap-4 mb-10">
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
-                <h2 class="text-3xl font-bold text-white">AI-Powered Automation</h2>
+                <h2 class="font-display text-3xl font-bold text-white">AI-Powered Automation</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">YOLO + MobileSAM Integration</h3>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">YOLO + MobileSAM Integration</h3>
                         <p class="text-base text-slate-400">We integrate MobileSAM for assisted segmentation. The detection engine is fully agnostic: load your own YOLO weights in ONNX format to keep complete control over your models.</p>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Native ONNX Inference</h3>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">Native ONNX Inference</h3>
                         <p class="text-base text-slate-400">Local execution via ONNX Runtime. We avoid heavy frameworks like PyTorch or Ultralytics to maximize compatibility and efficiency on your hardware.</p>
                     </div>
                 </div>
@@ -76,7 +130,7 @@
         <section>
             <div class="flex items-center gap-4 mb-10">
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
-                <h2 class="text-3xl font-bold text-white">High-Speed Annotation</h2>
+                <h2 class="font-display text-3xl font-bold text-white">High-Speed Annotation</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1 bg-slate-900 border border-slate-800 rounded-xl p-2 shadow-2xl">
@@ -95,11 +149,11 @@
         <section>
             <div class="flex items-center gap-4 mb-10">
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
-                <h2 class="text-3xl font-bold text-white">Quality Control & Data Ops</h2>
+                <h2 class="font-display text-3xl font-bold text-white">Quality Control &amp; Data Ops</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-6 items-stretch">
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800 flex flex-col">
-                    <h4 class="font-bold text-white mb-3">False Negative Review</h4>
+                    <h4 class="font-display font-bold text-white mb-3">False Negative Review</h4>
                     <p class="text-sm text-slate-400 mb-4">A dedicated tool for catching model omissions. Automatically filters and reviews areas where the model lacks confidence, ensuring dataset integrity.</p>
                     <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700 mt-auto">
                         <source src="media/webm/false_negative_review.webm" type="video/webm">
@@ -107,7 +161,7 @@
                     </video>
                 </div>
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800 flex flex-col">
-                    <h4 class="font-bold text-white mb-3">Export-Time Augmentations</h4>
+                    <h4 class="font-display font-bold text-white mb-3">Export-Time Augmentations</h4>
                     <p class="text-sm text-slate-400 mb-4">Apply geometric and color transformations dynamically on export. Prepare your data for training without altering your original files.</p>
                     <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700 mt-auto">
                         <source src="media/webm/augmentations_workflow.webm" type="video/webm">
@@ -115,7 +169,7 @@
                     </video>
                 </div>
                 <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800 flex flex-col">
-                    <h4 class="font-bold text-white mb-3">Real-Time Statistics</h4>
+                    <h4 class="font-display font-bold text-white mb-3">Real-Time Statistics</h4>
                     <p class="text-sm text-slate-400 mb-4">A dashboard with instant metrics on class distribution and labeling progress. Spot dataset imbalances before exporting.</p>
                     <video muted loop playsinline preload="none" class="lazy-video w-full rounded border border-slate-700 mt-auto">
                         <source src="media/webm/statistics.webm" type="video/webm">
@@ -128,7 +182,7 @@
         <section>
             <div class="flex items-center gap-4 mb-10">
                 <div class="h-8 w-1 bg-blue-600 rounded"></div>
-                <h2 class="text-3xl font-bold text-white">More Under the Hood</h2>
+                <h2 class="font-display text-3xl font-bold text-white">More Under the Hood</h2>
             </div>
             <p class="text-base text-slate-400 max-w-3xl mb-10">
                 Beyond annotation and AI tooling, LensLaber covers the full dataset lifecycle — from large-scale browsing to export-ready packaging.
@@ -136,39 +190,39 @@
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-images text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Large Dataset Workflow</h4>
+                    <h4 class="font-display font-bold text-white mb-2">Large Dataset Workflow</h4>
                     <p class="text-sm text-slate-400">Thumbnail navigation, multi-selection, and fast image switching keep things responsive across 20,000+ image datasets.</p>
                 </div>
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-save text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Project Save/Load System</h4>
-                    <p class="text-sm text-slate-400">Save and restore full workflow state — annotations, review progress, filters, and history — using the native <code class="text-blue-300">.lens</code> project format.</p>
+                    <h4 class="font-display font-bold text-white mb-2">Project Save/Load System</h4>
+                    <p class="text-sm text-slate-400">Save and restore full workflow state — annotations, review progress, filters, and history — using the native <code class="font-mono-custom text-blue-300">.lens</code> project format.</p>
                 </div>
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-file-export text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Dataset Export</h4>
+                    <h4 class="font-display font-bold text-white mb-2">Dataset Export</h4>
                     <p class="text-sm text-slate-400">Customizable Train/Validation/Test splits, optional image inclusion, and single-file ZIP packaging across multiple annotation formats.</p>
                 </div>
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-magnifying-glass-chart text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Image Quality Control</h4>
+                    <h4 class="font-display font-bold text-white mb-2">Image Quality Control</h4>
                     <p class="text-sm text-slate-400">Pre-export checks for resolution, aspect ratio, compression artifacts, and lighting issues, so problems get caught before training.</p>
                 </div>
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-keyboard text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Configurable Shortcuts</h4>
+                    <h4 class="font-display font-bold text-white mb-2">Configurable Shortcuts</h4>
                     <p class="text-sm text-slate-400">Fully customizable keyboard controls let you tailor the annotation workflow to your own habits and speed.</p>
                 </div>
                 <div class="bg-slate-900/40 p-6 rounded-xl border border-slate-800/70 hover:border-blue-500/40 transition-colors">
                     <i class="fas fa-arrow-pointer text-blue-400 text-xl mb-4"></i>
-                    <h4 class="font-bold text-white mb-2">Adaptive Cursor & Autosave</h4>
+                    <h4 class="font-display font-bold text-white mb-2">Adaptive Cursor &amp; Autosave</h4>
                     <p class="text-sm text-slate-400">A context-aware cursor reflects the active tool in real time, while autosave continuously protects your progress in the background.</p>
                 </div>
             </div>
         </section>
 
         <section class="text-center bg-gradient-to-b from-blue-900/10 to-transparent border border-blue-900/30 rounded-2xl py-14 px-6">
-            <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Ready to try it on your own dataset?</h2>
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Ready to try it on your own dataset?</h2>
             <p class="text-slate-400 max-w-xl mx-auto mb-8">Download the beta for Windows or Linux and start annotating offline in minutes.</p>
             <a href="index.html#download" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-lg transition shadow-lg shadow-blue-600/20">Download Beta →</a>
             <p class="text-slate-500 text-sm max-w-xl mx-auto mt-8">As a beta product, LensLaber is still evolving — we deeply appreciate any feedback you share along the way, as it directly shapes future releases.</p>
@@ -179,7 +233,7 @@
         <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
             <p>&copy; 2026 LensLaber. All rights reserved.</p>
             <div class="flex items-center gap-6">
-                <a href="mailto:LensLaber@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
                 <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
                 <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
@@ -189,15 +243,32 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // Lazy video
         const obs = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 const v = e.target;
-                if(e.isIntersecting) { v.load(); v.play().catch(()=>{}); }
+                if (e.isIntersecting) { v.load(); v.play().catch(() => {}); }
                 else { v.pause(); }
             });
         }, { threshold: 0.1 });
         document.querySelectorAll(".lazy-video").forEach(v => obs.observe(v));
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bars = hamburger.querySelectorAll('.ham-bar');
+        hamburger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', open);
+            if (open) { bars[0].style.transform='translateY(6px) rotate(45deg)'; bars[1].style.opacity='0'; bars[2].style.transform='translateY(-6px) rotate(-45deg)'; }
+            else { bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform=''; }
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+            bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform='';
+        }));
     });
     </script>
 </body>
 </html>
+
