@@ -104,6 +104,37 @@
 
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
+
+        /* ── Mobile nav ── */
+        #mobile-menu {
+            display: none; flex-direction: column;
+            background: rgba(9,15,30,0.98); backdrop-filter: blur(16px);
+            border-top: 1px solid rgb(30 41 59);
+            padding: 1rem 1.5rem 1.5rem; gap: 0.25rem;
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a, #mobile-menu .mob-section-title {
+            display: block; padding: 0.65rem 0.5rem;
+            font-size: 0.95rem; font-weight: 500; color: #94a3b8;
+            border-bottom: 1px solid rgba(30,41,59,0.6);
+            text-decoration: none; transition: color 0.15s;
+        }
+        #mobile-menu a:last-child { border-bottom: none; }
+        #mobile-menu a:hover { color: #60a5fa; }
+        #mobile-menu a.mob-active { color: #fff; font-weight: 600; }
+        #mobile-menu .mob-section-title {
+            color: #475569; font-size: 0.7rem; letter-spacing: 0.1em;
+            text-transform: uppercase; font-weight: 700;
+            padding-bottom: 0.3rem; border-bottom: none; margin-top: 0.5rem;
+        }
+        #mobile-menu a.mob-cta {
+            margin-top: 0.75rem; background: #2563eb; color: #fff;
+            text-align: center; border-radius: 0.5rem; padding: 0.75rem;
+            font-weight: 700; border-bottom: none;
+        }
+        #mobile-menu a.mob-cta:hover { background: #1d4ed8; color: #fff; }
+        #hamburger { display: flex; }
+        @media (min-width: 768px) { #hamburger { display: none; } #mobile-menu { display: none !important; } }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
@@ -127,7 +158,26 @@
                     </div>
                 </div>
             </div>
-            <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+            <div class="flex items-center gap-2">
+                <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+
+                <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                    class="flex flex-col justify-center items-center gap-1.5 w-9 h-9 rounded-lg border border-slate-700 hover:border-slate-500 transition bg-slate-900/60">
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+            <a href="features.html">Features</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="index.html#download">Download</a>
+            <span class="mob-section-title">Support</span>
+            <a href="feedback.html" class="mob-active"><i class="fas fa-bug mr-2 text-red-400"></i>Report an Issue</a>
+            <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank"><i class="fab fa-linkedin mr-2 text-blue-400"></i>LinkedIn</a>
+            <a href="https://www.reddit.com/user/LensLaber/" target="_blank"><i class="fab fa-reddit mr-2 text-orange-400"></i>Reddit</a>
+            <a href="index.html#download" class="mob-cta"><i class="fas fa-download mr-2"></i>Get Beta</a>
         </div>
     </nav>
 
@@ -307,6 +357,22 @@
                 document.getElementById('form-error').style.display = 'flex';
             }
         }
+    
+        // ── Hamburger ──────────────────────────────────────────────────────────────
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bars = hamburger.querySelectorAll('.ham-bar');
+        hamburger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', open);
+            if (open) { bars[0].style.transform='translateY(6px) rotate(45deg)'; bars[1].style.opacity='0'; bars[2].style.transform='translateY(-6px) rotate(-45deg)'; }
+            else { bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform=''; }
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+            bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform='';
+        }));
     </script>
 </body>
 </html>
