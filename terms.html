@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LensLaber Terms of Use — license conditions, beta limitations, liability, and governing law.">
+    <title>Terms of Use | LensLaber</title>
+    <link rel="icon" type="image/png" href="media/screenshots/logoLL.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); }
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Sora', sans-serif; }
+        .font-mono-custom { font-family: 'JetBrains Mono', monospace; }
+
+        .terms-section h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .terms-section p  { color: #94a3b8; margin-bottom: 0.85rem; font-size: 0.9rem; line-height: 1.75; }
+        .terms-section ul { color: #94a3b8; font-size: 0.9rem; line-height: 1.75; margin-bottom: 0.85rem; padding-left: 1.5rem; list-style: disc; }
+        .terms-section ul li { margin-bottom: 0.35rem; }
+        .terms-section ol { color: #94a3b8; font-size: 0.9rem; line-height: 1.75; margin-bottom: 0.85rem; padding-left: 1.5rem; list-style: decimal; }
+        .terms-section ol li { margin-bottom: 0.35rem; }
+        .terms-section a { color: #60a5fa; text-decoration: underline; }
+        .terms-section a:hover { color: #93c5fd; }
+        .terms-section strong { color: #cbd5e1; }
+
+        .toc-link { color: #60a5fa; font-size: 0.85rem; text-decoration: none; }
+        .toc-link:hover { text-decoration: underline; color: #93c5fd; }
+
+        .warn-box {
+            background: rgba(234,179,8,0.07);
+            border: 1px solid rgba(234,179,8,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .info-box {
+            background: rgba(59,130,246,0.07);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ── Mobile nav ── */
+        #mobile-menu {
+            display: none; flex-direction: column;
+            background: rgba(9,15,30,0.98); backdrop-filter: blur(16px);
+            border-top: 1px solid rgb(30 41 59);
+            padding: 1rem 1.5rem 1.5rem; gap: 0.25rem;
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a, #mobile-menu .mob-section-title {
+            display: block; padding: 0.65rem 0.5rem;
+            font-size: 0.95rem; font-weight: 500; color: #94a3b8;
+            border-bottom: 1px solid rgba(30,41,59,0.6);
+            text-decoration: none; transition: color 0.15s;
+        }
+        #mobile-menu a:last-child { border-bottom: none; }
+        #mobile-menu a:hover { color: #60a5fa; }
+        #mobile-menu a.mob-active { color: #fff; font-weight: 600; }
+        #mobile-menu .mob-section-title {
+            color: #475569; font-size: 0.7rem; letter-spacing: 0.1em;
+            text-transform: uppercase; font-weight: 700;
+            padding-bottom: 0.3rem; border-bottom: none; margin-top: 0.5rem;
+        }
+        #mobile-menu a.mob-cta {
+            margin-top: 0.75rem; background: #2563eb; color: #fff;
+            text-align: center; border-radius: 0.5rem; padding: 0.75rem;
+            font-weight: 700; border-bottom: none;
+        }
+        #mobile-menu a.mob-cta:hover { background: #1d4ed8; color: #fff; }
+        #hamburger { display: flex; }
+        @media (min-width: 768px) { #hamburger { display: none; } #mobile-menu { display: none !important; } }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 leading-relaxed selection:bg-blue-500/30">
+
+    <nav class="glass sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="media/screenshots/logoLL.png" alt="LensLaber Logo" class="h-9 w-auto object-contain">
+                <span class="font-display font-bold text-xl text-white tracking-wide">LensLaber</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="features.html" class="hover:text-blue-400 transition">Features</a>
+                <a href="philosophy.html" class="hover:text-blue-400 transition">Philosophy</a>
+                <a href="index.html#download" class="hover:text-white transition">Download</a>
+                <div class="relative group">
+                    <button class="hover:text-white transition flex items-center gap-1">Support ▾</button>
+                    <div class="absolute right-0 w-48 bg-slate-900 border border-slate-800 rounded-lg py-2 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl">
+                        <a href="feedback.html" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fas fa-bug mr-2"></i>Report an Issue</a>
+                        <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                        <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="block px-4 py-2 hover:bg-slate-800 text-slate-300"><i class="fab fa-reddit mr-2"></i>Reddit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="index.html#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-bold text-sm transition shadow-lg shadow-blue-500/20">Get Beta</a>
+                <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
+                    class="flex flex-col justify-center items-center gap-1.5 w-9 h-9 rounded-lg border border-slate-700 hover:border-slate-500 transition bg-slate-900/60">
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300"></span>
+                    <span class="ham-bar block w-5 h-0.5 bg-slate-300 transition-all duration-300 origin-center"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+            <a href="features.html">Features</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="index.html#download">Download</a>
+            <span class="mob-section-title">Support</span>
+            <a href="feedback.html"><i class="fas fa-bug mr-2 text-red-400"></i>Report an Issue</a>
+            <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank"><i class="fab fa-linkedin mr-2 text-blue-400"></i>LinkedIn</a>
+            <a href="https://www.reddit.com/user/LensLaber/" target="_blank"><i class="fab fa-reddit mr-2 text-orange-400"></i>Reddit</a>
+            <a href="index.html#download" class="mob-cta"><i class="fas fa-download mr-2"></i>Get Beta</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="py-14 px-6 text-center border-b border-slate-800/50">
+        <div class="max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 border border-slate-700 bg-slate-900/50 text-slate-400 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-6">
+                <i class="fas fa-file-contract text-blue-500"></i> End-User License Agreement
+            </div>
+            <h1 class="font-display text-4xl font-bold text-white mb-4">Terms of Use</h1>
+            <p class="text-slate-400 text-sm mb-2">
+                Last updated: <strong class="text-slate-300">June 21, 2026</strong>
+            </p>
+            <p class="text-slate-500 text-xs max-w-xl mx-auto">
+                By downloading, installing, or using LensLaber you agree to these terms in full.
+                If you do not agree, do not install or use the software.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="bg-slate-900/40 border border-slate-800/60 rounded-xl p-6 mb-10">
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Contents</p>
+            <ol class="space-y-1.5 text-sm">
+                <li><a href="#s1" class="toc-link">1. Parties and scope</a></li>
+                <li><a href="#s2" class="toc-link">2. License grant</a></li>
+                <li><a href="#s3" class="toc-link">3. Beta status and limitations</a></li>
+                <li><a href="#s4" class="toc-link">4. 30-day usage period</a></li>
+                <li><a href="#s5" class="toc-link">5. Restrictions</a></li>
+                <li><a href="#s6" class="toc-link">6. Intellectual property</a></li>
+                <li><a href="#s7" class="toc-link">7. Data and privacy</a></li>
+                <li><a href="#s8" class="toc-link">8. Disclaimer of warranties</a></li>
+                <li><a href="#s9" class="toc-link">9. Limitation of liability</a></li>
+                <li><a href="#s10" class="toc-link">10. Consumer rights (EU / Spain)</a></li>
+                <li><a href="#s11" class="toc-link">11. Termination</a></li>
+                <li><a href="#s12" class="toc-link">12. Changes to these terms</a></li>
+                <li><a href="#s13" class="toc-link">13. Governing law and jurisdiction</a></li>
+                <li><a href="#s14" class="toc-link">14. Contact</a></li>
+            </ol>
+        </div>
+
+        <div class="warn-box mb-8">
+            <p class="text-yellow-300 text-xs font-bold uppercase tracking-wider mb-1"><i class="fas fa-triangle-exclamation mr-1"></i> Beta software — read before downloading</p>
+            <p class="text-slate-400 text-sm mb-0">LensLaber is currently in public beta. It may contain bugs or unexpected behaviour. Do not use it as your sole or primary storage for critical, irreplaceable data. Always keep independent backups of your annotation projects.</p>
+        </div>
+
+        <div class="terms-section">
+
+            <!-- 1 -->
+            <h2 id="s1"><i class="fas fa-users text-blue-400 text-base"></i> 1. Parties and scope</h2>
+            <p>These Terms of Use ("Terms") constitute a legally binding agreement between you ("User", "you") and the developer of LensLaber ("Licensor", "we", "I"), an individual operating as a sole trader (<em>autónomo</em>) established in Spain.</p>
+            <p>These Terms govern your use of the LensLaber desktop application (the "Software"), including all beta versions, updates, and related documentation made available through this website or the official GitHub repository.</p>
+
+            <!-- 2 -->
+            <h2 id="s2"><i class="fas fa-key text-blue-400 text-base"></i> 2. License grant</h2>
+            <p>Subject to your compliance with these Terms, the Licensor grants you a <strong>limited, non-exclusive, non-transferable, revocable license</strong> to install and use the Software on devices you own or control, solely for the purposes of:</p>
+            <ul>
+                <li>Personal or professional evaluation of LensLaber during the beta period.</li>
+                <li>Creating computer vision annotation datasets for your own research or commercial projects.</li>
+            </ul>
+            <p>This license does not include any right to sublicense, sell, resell, transfer, assign, or otherwise exploit the Software or any part of it for the benefit of a third party.</p>
+
+            <!-- 3 -->
+            <h2 id="s3"><i class="fas fa-flask text-blue-400 text-base"></i> 3. Beta status and limitations</h2>
+            <p>The Software is provided as a <strong>public beta</strong>. This means:</p>
+            <ul>
+                <li>Features, behaviour, file formats, and the license model may change between beta versions without prior notice.</li>
+                <li>The Software may contain bugs, errors, or incomplete functionality.</li>
+                <li>The Licensor provides no guarantee of uptime, data integrity, or continuity of any specific feature.</li>
+                <li>Beta builds are made available free of charge to gather user feedback. They are not intended for production use in mission-critical environments.</li>
+            </ul>
+            <p>Feedback you provide (via the feedback form or other channels) may be used to improve the Software. You retain ownership of any feedback content you submit.</p>
+
+            <!-- 4 -->
+            <h2 id="s4"><i class="fas fa-clock text-blue-400 text-base"></i> 4. 30-day usage period</h2>
+            <p>Each beta installation includes a <strong>30-day usage period</strong>, enforced locally on your device with no server communication. After 30 days the current installation will stop functioning.</p>
+            <p>To continue using LensLaber during the beta phase you must install the latest available beta build, which resets the usage period. New builds will be released at regular intervals. This mechanism exists solely to ensure that beta testers are working with the most current version and providing relevant feedback.</p>
+            <p>The 30-day limit is a <strong>temporary beta measure</strong> and will not apply to future commercial releases, which will use a one-time online license activation instead.</p>
+            <div class="info-box">
+                <p class="text-blue-300 text-xs font-bold uppercase tracking-wider mb-1"><i class="fas fa-gift mr-1"></i> Beta tester reward</p>
+                <p class="text-slate-400 text-sm mb-0">Users who provide consistent, constructive feedback during the beta period will receive a <strong class="text-slate-300">free commercial license</strong> upon the final release at the Licensor's sole discretion.</p>
+            </div>
+
+            <!-- 5 -->
+            <h2 id="s5"><i class="fas fa-ban text-blue-400 text-base"></i> 5. Restrictions</h2>
+            <p>You may not, and may not permit anyone else to:</p>
+            <ul>
+                <li>Copy, modify, adapt, translate, or create derivative works of the Software.</li>
+                <li>Reverse-engineer, disassemble, decompile, or otherwise attempt to derive the source code, except to the extent expressly permitted by applicable law (e.g. Art. 6 of Directive 2009/24/EC on software interoperability).</li>
+                <li>Remove, alter, or obscure any proprietary notices, labels, or marks on the Software.</li>
+                <li>Redistribute, sell, sublicense, rent, lease, or transfer the Software or any copy thereof to any third party.</li>
+                <li>Use the Software to develop a competing product.</li>
+                <li>Circumvent or disable the 30-day usage enforcement mechanism.</li>
+                <li>Use the Software in any manner that violates applicable law.</li>
+            </ul>
+
+            <!-- 6 -->
+            <h2 id="s6"><i class="fas fa-copyright text-blue-400 text-base"></i> 6. Intellectual property</h2>
+            <p>The Software, including all source code, algorithms, interfaces, documentation, and associated materials, is proprietary and protected by copyright law (Spanish <em>Real Decreto Legislativo 1/1996</em>, Ley de Propiedad Intelectual, and EU Directive 2009/24/EC, and applicable copyright laws worldwide).</p>
+            <p>All rights not expressly granted in these Terms are reserved by the Licensor. Nothing in these Terms transfers ownership of any intellectual property rights to you.</p>
+            <p><strong>Your data is yours.</strong> You retain full ownership of all images, annotation files, project files, and datasets you create or process with the Software. The Licensor makes no claim over any content you produce.</p>
+
+            <!-- 7 -->
+            <h2 id="s7"><i class="fas fa-shield-halved text-blue-400 text-base"></i> 7. Data and privacy</h2>
+            <p>The Software itself operates <strong>100% offline</strong>. It does not transmit your images, annotations, or any other local data to any server. No telemetry or usage analytics are collected by the Software during the beta period.</p>
+            <p>The website through which you download the Software may collect limited personal data (email address for update notifications, contact form data) as described in our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+            <p>A future commercial release will require a <strong>one-time online license activation</strong>. At that point this section will be updated to describe precisely what data is transmitted during activation.</p>
+
+            <!-- 8 -->
+            <h2 id="s8"><i class="fas fa-circle-exclamation text-blue-400 text-base"></i> 8. Disclaimer of warranties</h2>
+            <p>To the maximum extent permitted by applicable law, the Software is provided <strong>"as is" and "as available"</strong>, without any warranty of any kind, express or implied, including but not limited to:</p>
+            <ul>
+                <li>Warranties of merchantability or fitness for a particular purpose.</li>
+                <li>Warranties that the Software will be error-free, uninterrupted, or free of harmful components.</li>
+                <li>Warranties regarding the accuracy, completeness, or reliability of any output produced by the Software's AI features (YOLO detection, MobileSAM segmentation).</li>
+            </ul>
+            <p>You assume all risk arising from your use of, or inability to use, the Software and any output it generates.</p>
+
+            <!-- 9 -->
+            <h2 id="s9"><i class="fas fa-scale-balanced text-blue-400 text-base"></i> 9. Limitation of liability</h2>
+            <p>To the maximum extent permitted by applicable law, the Licensor shall not be liable for any:</p>
+            <ul>
+                <li><strong>Indirect, incidental, special, or consequential damages</strong>, including loss of profits, loss of data, loss of business, or loss of goodwill.</li>
+                <li><strong>Direct damages</strong> exceeding the amount paid by you for the Software in the twelve months preceding the event giving rise to the claim (which for beta users is zero, as the beta is free of charge).</li>
+                <li>Damages arising from your failure to maintain adequate backups of your data.</li>
+                <li>Damages arising from the 30-day usage period expiring, including any annotation work performed during an expired installation.</li>
+            </ul>
+            <p>Some jurisdictions do not allow the exclusion or limitation of certain damages. In such cases the above limitations apply only to the extent permitted by law.</p>
+
+            <!-- 10 -->
+            <h2 id="s10"><i class="fas fa-euro-sign text-blue-400 text-base"></i> 10. Consumer rights (EU / Spain)</h2>
+            <p>If you are a consumer resident in the European Union or in Spain, the following applies and takes precedence over any conflicting provision above:</p>
+            <ul>
+                <li>You may have statutory rights under <strong>Directive 2019/770/EU</strong> (supply of digital content) and under the Spanish <em>Real Decreto Legislativo 1/2007</em> (Ley General para la Defensa de los Consumidores y Usuarios, TRLGDCU) that cannot be excluded or limited by contract.</li>
+                <li>Because LensLaber beta is provided <strong>free of charge</strong> and no personal data is collected by the Software itself in exchange for access, the conformity guarantees of Directive 2019/770/EU may not apply to the beta version. This will be reassessed for the commercial release.</li>
+                <li>Nothing in these Terms affects your right to bring a complaint before the relevant consumer protection authority in your country of residence, or before the competent courts.</li>
+            </ul>
+
+            <!-- 11 -->
+            <h2 id="s11"><i class="fas fa-power-off text-blue-400 text-base"></i> 11. Termination</h2>
+            <p>This license is effective from the moment you first install or use the Software and remains in force until terminated.</p>
+            <p>Your license terminates automatically, without notice, if you breach any provision of these Terms. Upon termination you must immediately uninstall and destroy all copies of the Software in your possession.</p>
+            <p>The Licensor may also discontinue the beta programme, revoke access, or release an incompatible new version at any time. In such cases the 30-day mechanism ensures you will be notified implicitly (the current installation will stop working and a new version will be available).</p>
+            <p>Sections 6 (Intellectual property), 8 (Disclaimer of warranties), 9 (Limitation of liability), and 13 (Governing law) survive termination.</p>
+
+            <!-- 12 -->
+            <h2 id="s12"><i class="fas fa-pen-to-square text-blue-400 text-base"></i> 12. Changes to these Terms</h2>
+            <p>The Licensor may update these Terms at any time to reflect changes in the Software, the law, or business practices. When material changes are made, the "Last updated" date at the top of this page will be revised and, where reasonably practicable, subscribers will be notified by email.</p>
+            <p>Continued use of the Software after the revised Terms have been posted constitutes your acceptance of those changes. If you do not agree to the revised Terms, you must stop using the Software.</p>
+
+            <!-- 13 -->
+            <h2 id="s13"><i class="fas fa-landmark text-blue-400 text-base"></i> 13. Governing law and jurisdiction</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of <strong>Spain</strong>, without regard to its conflict-of-law provisions.</p>
+            <p>Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of <strong>Spain</strong> corresponding to the Licensor's place of domicile, except where mandatory consumer protection law in your country of residence provides otherwise.</p>
+            <p>If you are a consumer in the EU, you may also use the European Commission's <strong>Online Dispute Resolution (ODR) platform</strong> at <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a> to resolve disputes out of court.</p>
+
+            <!-- 14 -->
+            <h2 id="s14"><i class="fas fa-envelope text-blue-400 text-base"></i> 14. Contact</h2>
+            <p>For questions or concerns about these Terms, please contact:</p>
+            <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-5 mb-4 text-sm text-slate-300 space-y-1">
+                <p><strong>Developer:</strong> Clemente O. — LensLaber</p>
+                <p><strong>Country:</strong> Spain</p>
+                <p><strong>Email:</strong> <a href="mailto:LensLaber@gmail.com">LensLaber@gmail.com</a></p>
+                <p><strong>Contact form:</strong> <a href="contact.html">lenslaber.github.io/contact.html</a></p>
+            </div>
+
+        </div><!-- end terms-section -->
+    </main>
+
+    <footer class="py-12 border-t border-slate-800/50 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+            <p>&copy; 2026 LensLaber. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+                <a href="terms.html" class="text-blue-400 transition">Terms of Use</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="https://www.linkedin.com/in/clemente-o-97b78a32a/" target="_blank" class="hover:text-blue-400 transition">LinkedIn</a>
+                <a href="https://www.reddit.com/user/LensLaber/" target="_blank" class="hover:text-blue-400 transition">Reddit</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bars = hamburger.querySelectorAll('.ham-bar');
+        hamburger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', open);
+            if (open) { bars[0].style.transform='translateY(6px) rotate(45deg)'; bars[1].style.opacity='0'; bars[2].style.transform='translateY(-6px) rotate(-45deg)'; }
+            else { bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform=''; }
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+            bars[0].style.transform=''; bars[1].style.opacity=''; bars[2].style.transform='';
+        }));
+    </script>
+</body>
+</html>
