@@ -113,6 +113,47 @@
                         <h3 class="font-display text-xl font-bold text-white mb-2">YOLO + MobileSAM Integration</h3>
                         <p class="text-base text-slate-400">We integrate MobileSAM for assisted segmentation. The detection engine is fully agnostic: load your own YOLO weights in ONNX format to keep complete control over your models.</p>
                     </div>
+
+                    <!-- SUPPORTED MODELS TABLE -->
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Supported YOLO Models</h3>
+                        <p class="text-sm text-slate-400 mb-4">All models must be exported to <code class="font-mono-custom text-blue-300">.onnx</code> format before loading. The engine reads tensor output directly — no framework dependencies required.</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between bg-slate-800/60 border border-slate-700/60 rounded-lg px-4 py-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono-custom text-sm font-semibold text-white">YOLOv8</span>
+                                    <span class="text-xs text-slate-400">Detect &amp; Segment</span>
+                                </div>
+                                <span class="text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-0.5">Supported</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-slate-800/60 border border-slate-700/60 rounded-lg px-4 py-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono-custom text-sm font-semibold text-white">YOLOv9</span>
+                                    <span class="text-xs text-slate-400">Detect &amp; Segment</span>
+                                </div>
+                                <span class="text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-0.5">Supported</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-slate-800/60 border border-slate-700/60 rounded-lg px-4 py-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono-custom text-sm font-semibold text-white">YOLO11</span>
+                                    <span class="text-xs text-slate-400">Detect &amp; Segment</span>
+                                </div>
+                                <span class="text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-0.5">Supported</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-slate-800/30 border border-slate-700/30 rounded-lg px-4 py-3 opacity-70">
+                                <div class="flex items-center gap-3">
+                                    <span class="font-mono-custom text-sm font-semibold text-slate-400">YOLOv10</span>
+                                    <span class="text-xs text-slate-500">Detect</span>
+                                </div>
+                                <span class="text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25 rounded-full px-3 py-0.5">Coming Soon</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-3 leading-relaxed">
+                            <i class="fas fa-circle-info mr-1 text-blue-400/60"></i>
+                            YOLOv5 and YOLOv7 use a different ONNX output format and are not compatible with the current inference engine.
+                        </p>
+                    </div>
+
                     <div>
                         <h3 class="font-display text-xl font-bold text-white mb-2">Native ONNX Inference</h3>
                         <p class="text-base text-slate-400">Local execution via ONNX Runtime. We avoid heavy frameworks like PyTorch or Ultralytics to maximize compatibility and efficiency on your hardware.</p>
