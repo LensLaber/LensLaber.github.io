@@ -325,7 +325,7 @@
                     There is a certain irony in the annotation space: the tools most likely to require GPU acceleration are the ones you use to generate the data that trains the models that will eventually need GPUs. Somewhere in that loop, the cart got in front of the horse.
                 </p>
                 <p>
-                    YOLO and SAM integration in LensLaber runs through ONNX Runtime — no PyTorch, no Ultralytics, no framework that drags in six gigabytes of dependencies. The inference that happens is real inference, not a stripped-down preview mode. It runs on the CPU, comfortably, on hardware from a decade ago.
+                    YOLO and SAM integration in LensLaber runs through ONNX Runtime — no PyTorch, no Ultralytics, no framework that drags in six gigabytes of dependencies. The inference that happens is real inference, not a stripped-down preview mode. It runs on the CPU, comfortably, on hardware from a decade ago. Currently supported models are YOLOv8, YOLOv9, and YOLO11 in both detection and segmentation variants.
                 </p>
                 <p>
                     That is a deliberate engineering position, not a limitation waiting to be lifted.
@@ -345,7 +345,7 @@
                 <div class="border border-slate-800 rounded-xl p-5 bg-slate-900/30">
                     <i class="fas fa-box-open text-blue-400 mb-4 text-lg"></i>
                     <h4 class="text-white font-semibold text-sm mb-2">Bring your own YOLO</h4>
-                    <p class="text-slate-500 text-xs leading-relaxed">Load any YOLO ONNX weights. The engine is model-agnostic by design.</p>
+                    <p class="text-slate-500 text-xs leading-relaxed">Load your own ONNX weights. Supported: YOLOv8, YOLOv9, YOLO11 (detect &amp; segment). YOLOv10 coming soon.</p>
                 </div>
             </div>
         </section>
