@@ -288,7 +288,7 @@
                     Can I use my own AI models?
                     <i class="fas fa-chevron-down faq-chevron text-slate-500 transition-transform"></i>
                 </summary>
-                <p class="text-sm text-slate-400 mt-3">Yes. The detection engine is fully agnostic — load any YOLO model in ONNX format to keep full control over your own weights.</p>
+                <p class="text-sm text-slate-400 mt-3">Yes. Load your own YOLO weights in <code class="font-mono-custom text-blue-300 text-xs">.onnx</code> format and the engine will run inference locally with no cloud dependency. Currently supported: <span class="text-slate-300 font-medium">YOLOv8, YOLOv9, and YOLO11</span> (detect &amp; segment). <span class="text-amber-400/80">YOLOv10 support is coming in a future update.</span></p>
             </details>
             <details class="bg-slate-900/40 border border-slate-800/70 rounded-xl px-6 py-4 group">
                 <summary class="flex items-center justify-between font-semibold text-white">
@@ -343,4 +343,5 @@
     </script>
 </body>
 </html>
+
 
